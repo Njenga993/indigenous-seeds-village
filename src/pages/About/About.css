@@ -1,0 +1,843 @@
+/* ==============================
+   ABOUT HERO
+   ============================== */
+
+.about-hero {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 31, 15, 0.85) 0%,
+    rgba(30, 86, 49, 0.7) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 120px 20px;
+  max-width: 750px;
+}
+
+.about-hero-tag {
+  display: inline-block;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(212, 160, 23, 0.12);
+  padding: 10px 24px;
+  border-radius: 50px;
+  margin-bottom: 25px;
+}
+
+.about-hero-content h1 {
+  color: white;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.about-hero-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* ==============================
+   SECTION TAG (REUSABLE)
+   ============================== */
+
+.section-tag {
+  display: inline-block;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* ==============================
+   OUR STORY
+   ============================== */
+
+.about-story {
+  background: white;
+  padding: 100px 0;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.story-image {
+  position: relative;
+}
+
+.story-image img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.story-image-accent {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 200px;
+  height: 200px;
+  background: rgba(212, 160, 23, 0.08);
+  border-radius: 24px;
+  z-index: -1;
+}
+
+.story-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--jungle-green);
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.story-lead {
+  font-size: 1.15rem;
+  color: var(--jungle-green);
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.story-content p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+/* ==============================
+   SEED SAVERS CONNECTION
+   ============================== */
+
+.about-seedsavers {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.seedsavers-banner {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.seedsavers-content {
+  padding: 60px;
+}
+
+.seedsavers-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--jungle-green);
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.seedsavers-content p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  max-width: 700px;
+}
+
+.seedsavers-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--jungle-green);
+  font-weight: 600;
+  padding: 14px 30px;
+  border: 2px solid var(--jungle-green);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.seedsavers-link:hover {
+  background: var(--jungle-green);
+  color: white;
+}
+
+.seedsavers-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #f0ede6;
+}
+
+.stat-item {
+  padding: 35px 25px;
+  text-align: center;
+  border-right: 1px solid #f0ede6;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* ==============================
+   MISSION & VISION
+   ============================== */
+
+.about-mission {
+  background: white;
+  padding: 100px 0;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.mission-image-wrapper img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.mission-block {
+  margin-bottom: 40px;
+}
+
+.mission-block:last-child {
+  margin-bottom: 0;
+}
+
+.mission-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  background: rgba(30, 86, 49, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: var(--jungle-green);
+}
+
+.mission-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.mission-block h3 {
+  color: var(--jungle-green);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.mission-block p {
+  color: #555;
+  line-height: 1.8;
+}
+
+/* ==============================
+   CORE VALUES
+   ============================== */
+
+.about-values {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.values-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.values-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--jungle-green);
+  margin-bottom: 15px;
+}
+
+.values-header p {
+  color: #666;
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.value-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.value-number {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: rgba(30, 86, 49, 0.04);
+  line-height: 1;
+}
+
+.value-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: rgba(212, 160, 23, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--gold);
+}
+
+.value-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.value-card h3 {
+  color: var(--jungle-green);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ==============================
+   HERITAGE SECTION
+   ============================== */
+
+.about-heritage {
+  background: white;
+  padding: 100px 0;
+}
+
+.heritage-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.heritage-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--jungle-green);
+  margin-bottom: 15px;
+}
+
+.heritage-header p {
+  color: #666;
+  font-size: 1.05rem;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.heritage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.heritage-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.heritage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.heritage-card-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.heritage-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.heritage-card:hover .heritage-card-image img {
+  transform: scale(1.08);
+}
+
+.heritage-card-content {
+  padding: 30px;
+}
+
+.heritage-card-content h3 {
+  color: var(--jungle-green);
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.heritage-card-content p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ==============================
+   SUSTAINABILITY
+   ============================== */
+
+.about-sustainability {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.sustainability-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--jungle-green);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.sustainability-content > p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.sustainability-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sustainability-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.sustainability-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.sustainability-item h4 {
+  color: var(--jungle-green);
+  font-size: 1.05rem;
+  margin-bottom: 5px;
+}
+
+.sustainability-item p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.sustainability-image {
+  position: relative;
+}
+
+.sustainability-image img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.sustainability-badge {
+  position: absolute;
+  bottom: 30px;
+  left: -25px;
+  background: var(--jungle-green);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(30, 86, 49, 0.3);
+}
+
+.sustainability-badge span:first-child {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.sustainability-badge span:last-child {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ==============================
+   WHY CHOOSE US
+   ============================== */
+
+.about-why {
+  background: white;
+  padding: 100px 0;
+}
+
+.why-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.why-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--jungle-green);
+  margin-bottom: 15px;
+}
+
+.why-header p {
+  color: #666;
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.why-card {
+  background: var(--cream);
+  padding: 35px 30px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.why-card:hover {
+  border-color: rgba(30, 86, 49, 0.1);
+  background: white;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.why-card-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  background: rgba(30, 86, 49, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--jungle-green);
+}
+
+.why-card-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.why-card h3 {
+  color: var(--jungle-green);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ==============================
+   TESTIMONIAL QUOTE
+   ============================== */
+
+.about-testimonial {
+  background: var(--jungle-green);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-testimonial::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 160, 23, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.testimonial-quote {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-mark {
+  font-size: 8rem;
+  color: rgba(212, 160, 23, 0.15);
+  line-height: 0.5;
+  font-family: Georgia, serif;
+  margin-bottom: 30px;
+}
+
+.testimonial-quote blockquote {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  line-height: 1.9;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.quote-author {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ==============================
+   CTA SECTION
+   ============================== */
+
+.about-cta {
+  background: var(--cream);
+  padding: 80px 0;
+}
+
+.about-cta-content {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.about-cta-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--jungle-green);
+  margin-bottom: 15px;
+}
+
+.about-cta-content p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.about-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-cta-primary {
+  display: inline-block;
+  background: var(--jungle-green);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.about-cta-primary:hover {
+  background: #1a4a2a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(30, 86, 49, 0.3);
+}
+
+.about-cta-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--jungle-green);
+  border: 2px solid var(--jungle-green);
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.about-cta-secondary:hover {
+  background: var(--jungle-green);
+  color: white;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 992px) {
+  .story-grid,
+  .mission-grid,
+  .sustainability-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .story-image img,
+  .mission-image-wrapper img,
+  .sustainability-image img {
+    height: 400px;
+  }
+
+  .story-image-accent {
+    display: none;
+  }
+
+  .seedsavers-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .values-grid,
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heritage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 400px;
+  }
+
+  .about-hero-content {
+    padding: 80px 20px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-story,
+  .about-seedsavers,
+  .about-mission,
+  .about-values,
+  .about-heritage,
+  .about-sustainability,
+  .about-why {
+    padding: 70px 0;
+  }
+
+  .seedsavers-content {
+    padding: 40px 30px;
+  }
+
+  .values-grid,
+  .why-grid,
+  .heritage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seedsavers-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sustainability-badge {
+    left: 10px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seedsavers-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid #f0ede6;
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .about-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

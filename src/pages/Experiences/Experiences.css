@@ -1,0 +1,718 @@
+/* ==============================
+   HERO SECTION
+   ============================== */
+
+.exp-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.exp-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.exp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 31, 15, 0.85),
+    rgba(30, 86, 49, 0.6)
+  );
+}
+
+.exp-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 100px 20px;
+  max-width: 650px;
+}
+
+.exp-hero-tag {
+  display: inline-block;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(212, 160, 23, 0.12);
+  padding: 10px 24px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.exp-hero-content h1 {
+  color: white;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+
+.exp-hero-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* ==============================
+   SECTION TAG
+   ============================== */
+
+.section-tag {
+  display: inline-block;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* ==============================
+   INTRO SECTION
+   ============================== */
+
+.exp-intro {
+  background: white;
+  padding: 80px 0 40px;
+}
+
+.exp-intro-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.exp-intro-content h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 20px;
+}
+
+.exp-intro-content > p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.exp-summary {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px;
+  background: var(--cream);
+  border-radius: 18px;
+  flex-wrap: wrap;
+}
+
+.exp-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.exp-summary-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.exp-summary-label {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* ==============================
+   EXPERIENCES GRID
+   ============================== */
+
+.exp-grid-section {
+  background: white;
+  padding: 60px 0 80px;
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.exp-card {
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 3 / 4;
+}
+
+.exp-card-image {
+  width: 100%;
+  height: 100%;
+}
+
+.exp-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.exp-card:hover .exp-card-image img {
+  transform: scale(1.1);
+}
+
+.exp-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 31, 15, 0.9) 0%,
+    rgba(10, 31, 15, 0.4) 50%,
+    rgba(10, 31, 15, 0.1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px 25px;
+  transition: all 0.4s ease;
+}
+
+.exp-card:hover .exp-card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10, 31, 15, 0.95) 0%,
+    rgba(30, 86, 49, 0.6) 60%,
+    rgba(30, 86, 49, 0.3) 100%
+  );
+}
+
+.exp-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.exp-card-overlay h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.exp-card-overlay p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.exp-card-learn {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.exp-card:hover .exp-card-learn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================
+   CUSTOM EXPERIENCES
+   ============================== */
+
+.exp-custom {
+  background: var(--cream);
+  padding: 80px 0;
+}
+
+.custom-banner {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 86, 49, 0.04),
+    rgba(212, 160, 23, 0.06)
+  );
+  border-radius: 24px;
+  padding: 60px;
+  text-align: center;
+}
+
+.custom-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.custom-content h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 18px;
+}
+
+.custom-content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.custom-cta {
+  display: inline-block;
+  background: var(--jungle-green);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.custom-cta:hover {
+  background: #1a4a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(30, 86, 49, 0.3);
+}
+
+/* ==============================
+   CTA SECTION
+   ============================== */
+
+.exp-cta {
+  background: white;
+  padding: 80px 0;
+}
+
+.exp-cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.exp-cta-content h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 15px;
+}
+
+.exp-cta-content p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.exp-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.exp-cta-primary {
+  display: inline-block;
+  background: var(--jungle-green);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.exp-cta-primary:hover {
+  background: #1a4a2a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(30, 86, 49, 0.3);
+}
+
+.exp-cta-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--jungle-green);
+  border: 2px solid var(--jungle-green);
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.exp-cta-secondary:hover {
+  background: var(--jungle-green);
+  color: white;
+}
+
+/* ==============================
+   MODAL
+   ============================== */
+
+.exp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 31, 15, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: expFadeIn 0.3s ease;
+}
+
+@keyframes expFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.exp-modal-container {
+  background: white;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 950px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: expSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes expSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.exp-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.exp-modal-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.exp-modal-close:hover {
+  background: #f5f5f5;
+  transform: scale(1.05);
+}
+
+.exp-modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Modal Gallery */
+.exp-modal-gallery {
+  background: #f5f0e6;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px 0 0 24px;
+  overflow: hidden;
+}
+
+.exp-modal-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.exp-modal-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exp-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--jungle-green);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.exp-gallery-arrow:hover {
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.exp-gallery-prev {
+  left: 15px;
+}
+
+.exp-gallery-next {
+  right: 15px;
+}
+
+.exp-gallery-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* Modal Details */
+.exp-modal-details {
+  padding: 40px 35px;
+}
+
+.exp-modal-header {
+  margin-bottom: 20px;
+}
+
+.exp-modal-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.exp-modal-header h2 {
+  font-size: 1.8rem;
+  color: var(--jungle-green);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.exp-modal-tagline {
+  color: var(--gold);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.exp-modal-description {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* Modal Info */
+.exp-modal-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: var(--cream);
+  border-radius: 14px;
+}
+
+.exp-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-info-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #999;
+  font-weight: 600;
+}
+
+.exp-info-value {
+  color: var(--jungle-green);
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Modal Lists */
+.exp-modal-section {
+  margin-bottom: 20px;
+}
+
+.exp-modal-section h4 {
+  color: var(--jungle-green);
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.exp-included-list,
+.exp-bring-list {
+  list-style: none;
+  padding: 0;
+}
+
+.exp-included-list li {
+  color: #555;
+  padding: 5px 0;
+  padding-left: 22px;
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.exp-included-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--jungle-green);
+  font-weight: 700;
+}
+
+.exp-bring-list li {
+  color: #555;
+  padding: 5px 0;
+  padding-left: 22px;
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.exp-bring-list li::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* Modal Footer */
+.exp-modal-footer {
+  padding-top: 25px;
+  border-top: 1px solid #f0ede6;
+}
+
+.exp-modal-book-btn {
+  display: inline-block;
+  background: var(--jungle-green);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.exp-modal-book-btn:hover {
+  background: #1a4a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 86, 49, 0.3);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 1024px) {
+  .exp-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .exp-hero {
+    min-height: 380px;
+  }
+
+  .exp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .exp-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-modal-gallery {
+    border-radius: 24px 24px 0 0;
+    min-height: 300px;
+  }
+
+  .exp-modal-image-wrapper {
+    min-height: 300px;
+  }
+
+  .exp-modal-details {
+    padding: 30px 20px;
+  }
+
+  .exp-modal-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .exp-modal-info {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .exp-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .exp-summary {
+    gap: 25px;
+  }
+
+  .exp-modal-info {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-banner {
+    padding: 40px 20px;
+  }
+
+  .exp-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .exp-modal-close {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+}

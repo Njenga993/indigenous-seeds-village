@@ -1,0 +1,893 @@
+/* ==============================
+   RESTAURANT HERO
+   ============================== */
+
+.restaurant-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.restaurant-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.restaurant-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 31, 15, 0.85) 0%,
+    rgba(30, 86, 49, 0.65) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.restaurant-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 100px 20px;
+  max-width: 680px;
+}
+
+.restaurant-hero-tag {
+  display: inline-block;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(212, 160, 23, 0.12);
+  padding: 10px 24px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.restaurant-hero-content h1 {
+  color: white;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+
+.restaurant-hero-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* ==============================
+   SECTION TAG
+   ============================== */
+
+.section-tag {
+  display: inline-block;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* ==============================
+   PHILOSOPHY SECTION
+   ============================== */
+
+.restaurant-philosophy {
+  background: white;
+  padding: 100px 0;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.philosophy-image {
+  position: relative;
+}
+
+.philosophy-image img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.philosophy-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--jungle-green);
+  color: white;
+  padding: 18px 22px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 10px 30px rgba(30, 86, 49, 0.3);
+}
+
+.philosophy-badge span:first-child,
+.philosophy-badge span:last-child {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.philosophy-badge span:nth-child(2) {
+  font-size: 0.65rem;
+  font-weight: 400;
+}
+
+.philosophy-content h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 22px;
+  line-height: 1.2;
+}
+
+.philosophy-lead {
+  font-size: 1.1rem;
+  color: var(--jungle-green);
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.philosophy-content p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.philosophy-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.philosophy-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cream);
+  padding: 14px 18px;
+  border-radius: 12px;
+}
+
+.feature-check {
+  color: var(--jungle-green);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.philosophy-feature span:last-child {
+  color: #444;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   SIGNATURE DISHES
+   ============================== */
+
+.restaurant-dishes {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.dishes-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.dishes-header h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 15px;
+}
+
+.dishes-header p {
+  color: #666;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.dish-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.dish-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.dish-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.dish-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.dish-card:hover .dish-image img {
+  transform: scale(1.08);
+}
+
+.dish-category {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dish-content {
+  padding: 25px;
+}
+
+.dish-content h3 {
+  color: var(--jungle-green);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.dish-content p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ==============================
+   MENU DOWNLOAD SECTION
+   ============================== */
+
+.restaurant-menu {
+  background: white;
+  padding: 100px 0;
+}
+
+.menu-banner {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  background: linear-gradient(
+    135deg,
+    var(--jungle-green),
+    #0f3d1a
+  );
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.menu-content {
+  padding: 60px;
+}
+
+.menu-content .section-tag {
+  color: var(--gold);
+}
+
+.menu-content h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: white;
+  margin-bottom: 18px;
+}
+
+.menu-content > p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.menu-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.menu-btn-primary,
+.menu-btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.menu-btn-primary {
+  background: var(--gold);
+  color: var(--jungle-green);
+}
+
+.menu-btn-primary:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+}
+
+.menu-btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-btn-secondary:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.menu-btn-primary svg,
+.menu-btn-secondary svg {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-info {
+  display: flex;
+  gap: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-info-item h4 {
+  color: var(--gold);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.menu-info-item p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.menu-decorative {
+  background: rgba(212, 160, 23, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-pattern {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(212, 160, 23, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+}
+
+/* ==============================
+   DINING SPACES
+   ============================== */
+
+.restaurant-spaces {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.spaces-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.spaces-header h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 15px;
+}
+
+.spaces-header p {
+  color: #666;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.spaces-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.space-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.space-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.space-image {
+  height: 260px;
+  overflow: hidden;
+}
+
+.space-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.space-card:hover .space-image img {
+  transform: scale(1.08);
+}
+
+.space-content {
+  padding: 30px;
+}
+
+.space-content h3 {
+  color: var(--jungle-green);
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.space-description {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.space-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #f0ede6;
+}
+
+.space-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.space-detail svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ==============================
+   CULINARY EXPERIENCES
+   ============================== */
+
+.restaurant-experiences {
+  background: white;
+  padding: 100px 0;
+}
+
+.experiences-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.experiences-header h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 15px;
+}
+
+.experiences-header p {
+  color: #666;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.food-experience-card {
+  background: var(--cream);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.food-experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.food-experience-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.food-experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.food-experience-card:hover .food-experience-image img {
+  transform: scale(1.06);
+}
+
+.experience-duration {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.food-experience-content {
+  padding: 25px;
+}
+
+.food-experience-content h3 {
+  color: var(--jungle-green);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.food-experience-content p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ==============================
+   DIETARY REQUIREMENTS
+   ============================== */
+
+.restaurant-diets {
+  background: var(--cream);
+  padding: 80px 0;
+}
+
+.diets-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.diets-content h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 18px;
+}
+
+.diets-content > p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.diets-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.diet-item {
+  background: white;
+  padding: 20px 15px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.diet-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.diet-icon {
+  font-size: 1.8rem;
+}
+
+.diet-item span:last-child {
+  color: #444;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ==============================
+   PRIVATE EVENTS
+   ============================== */
+
+.restaurant-events {
+  background: white;
+  padding: 80px 0;
+}
+
+.events-banner {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 86, 49, 0.04),
+    rgba(212, 160, 23, 0.06)
+  );
+  border-radius: 24px;
+  padding: 60px;
+  text-align: center;
+}
+
+.events-content {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.events-content h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 18px;
+}
+
+.events-content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.events-cta {
+  display: inline-block;
+  background: var(--jungle-green);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.events-cta:hover {
+  background: #1a4a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(30, 86, 49, 0.3);
+}
+
+/* ==============================
+   CTA SECTION
+   ============================== */
+
+.restaurant-cta {
+  background: var(--cream);
+  padding: 80px 0;
+}
+
+.restaurant-cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.restaurant-cta-content h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--jungle-green);
+  margin-bottom: 15px;
+}
+
+.restaurant-cta-content p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.restaurant-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.restaurant-cta-primary {
+  display: inline-block;
+  background: var(--jungle-green);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.restaurant-cta-primary:hover {
+  background: #1a4a2a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(30, 86, 49, 0.3);
+}
+
+.restaurant-cta-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--jungle-green);
+  border: 2px solid var(--jungle-green);
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.restaurant-cta-secondary:hover {
+  background: var(--jungle-green);
+  color: white;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 992px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .philosophy-image img {
+    height: 400px;
+  }
+
+  .philosophy-badge {
+    right: 10px;
+    bottom: -15px;
+  }
+
+  .dishes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spaces-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-decorative {
+    display: none;
+  }
+
+  .diets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-hero {
+    min-height: 380px;
+  }
+
+  .restaurant-philosophy,
+  .restaurant-dishes,
+  .restaurant-menu,
+  .restaurant-spaces,
+  .restaurant-experiences {
+    padding: 70px 0;
+  }
+
+  .dishes-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .spaces-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .experiences-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .menu-content {
+    padding: 40px 25px;
+  }
+
+  .menu-actions {
+    flex-direction: column;
+  }
+
+  .menu-btn-primary,
+  .menu-btn-secondary {
+    justify-content: center;
+  }
+
+  .menu-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .philosophy-features {
+    grid-template-columns: 1fr;
+  }
+
+  .diets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .events-banner {
+    padding: 40px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .diets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .restaurant-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

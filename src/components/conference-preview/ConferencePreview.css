@@ -1,0 +1,155 @@
+.conference-preview {
+  background: white;
+}
+
+.conference-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.conference-heading span {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+}
+
+.conference-heading h2 {
+  margin-top: 15px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--jungle-green);
+}
+
+.conference-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.conference-image {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.conference-image img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  display: block;
+}
+
+.capacity-badge {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+
+  background: var(--jungle-green);
+  color: white;
+
+  padding: 20px 25px;
+  border-radius: 16px;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.capacity-badge span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
+
+.capacity-badge strong {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.conference-description {
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 35px;
+  font-size: 1.05rem;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.facility-card {
+  background: var(--cream);
+  padding: 25px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.facility-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.facility-card h4 {
+  color: var(--jungle-green);
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.facility-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.conference-btn {
+  display: inline-block;
+  background: var(--jungle-green);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.conference-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(30, 86, 49, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .conference-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .conference-image img {
+    height: 400px;
+  }
+
+  .capacity-badge {
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .facility-grid {
+    grid-template-columns: 1fr;
+  }
+}

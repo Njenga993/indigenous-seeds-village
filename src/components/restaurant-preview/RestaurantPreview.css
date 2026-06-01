@@ -1,0 +1,174 @@
+.restaurant-preview {
+  background: white;
+}
+
+.restaurant-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.restaurant-image {
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.restaurant-image:hover img {
+  transform: scale(1.05);
+}
+
+.restaurant-tag {
+  display: inline-block;
+
+  color: var(--gold);
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 20px;
+
+  font-size: 0.85rem;
+}
+
+.restaurant-carousel {
+  position: relative;
+
+  height: 700px;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+}
+
+.carousel-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+
+  transition: opacity 1s ease;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
+
+.carousel-dots {
+  position: absolute;
+
+  bottom: 30px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 10px;
+
+  z-index: 5;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(255,255,255,0.5);
+
+  cursor: pointer;
+}
+
+.active-dot {
+  background: white;
+}
+
+.restaurant-content h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  line-height: 1.1;
+
+  margin-bottom: 25px;
+
+  color: var(--jungle-green);
+}
+
+.restaurant-content p {
+  color: var(--text-secondary);
+
+  line-height: 1.9;
+
+  margin-bottom: 35px;
+}
+
+.restaurant-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+
+  margin-bottom: 40px;
+}
+
+.feature-item {
+  background: var(--cream);
+
+  padding: 16px 20px;
+
+  border-radius: 12px;
+
+  color: var(--jungle-green);
+
+  font-weight: 600;
+}
+
+.restaurant-btn {
+  display: inline-block;
+
+  background: var(--jungle-green);
+
+  color: white;
+
+  padding: 15px 35px;
+
+  border-radius: 50px;
+
+  transition: all 0.3s ease;
+}
+
+.restaurant-btn:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 992px) {
+  .restaurant-container {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-image img {
+    height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .restaurant-features {
+    grid-template-columns: 1fr;
+  }
+}

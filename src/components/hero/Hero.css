@@ -1,0 +1,348 @@
+/* ==============================
+   HERO SECTION
+   ============================== */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.55)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 800px;
+}
+
+/* ==============================
+   TAGLINE
+   ============================== */
+
+.hero-tagline {
+  display: inline-block;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+/* ==============================
+   HEADING
+   ============================== */
+
+.hero-content h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* ==============================
+   DESCRIPTION
+   ============================== */
+
+.hero-content p {
+  max-width: 650px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==============================
+   HERO BUTTONS
+   ============================== */
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.hero-primary-btn {
+  background: var(--gold);
+  color: white;
+  padding: 16px 36px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-primary-btn:hover {
+  background: #e6b800;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+}
+
+.hero-secondary-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-secondary-btn:hover {
+  background: white;
+  color: var(--jungle-green);
+}
+
+/* ==============================
+   AVAILABILITY WIDGET
+   ============================== */
+
+.hero-availability-widget {
+  margin-top: 10px;
+  animation: widgetFadeUp 0.8s ease 0.3s both;
+}
+
+@keyframes widgetFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.availability-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  border-radius: 20px;
+  max-width: 750px;
+}
+
+/* ==============================
+   AVAILABILITY FIELDS
+   ============================== */
+
+.availability-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.availability-field label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  padding-left: 8px;
+}
+
+.availability-field label svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.availability-field label span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.availability-field input,
+.availability-field select {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 14px;
+  background: white;
+  font-size: 0.95rem;
+  color: #333;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.availability-field input:focus,
+.availability-field select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.3);
+}
+
+.availability-field input:hover,
+.availability-field select:hover {
+  background: #fafaf8;
+}
+
+/* Style the date input calendar picker */
+.availability-field input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.availability-field input[type="date"]:hover::-webkit-calendar-picker-indicator {
+  opacity: 1;
+}
+
+/* ==============================
+   AVAILABILITY BUTTON
+   ============================== */
+
+.availability-btn {
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: none;
+  background: var(--gold);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.availability-btn:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 160, 23, 0.35);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 900px) {
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .availability-form {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .availability-field {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 140px;
+  }
+
+  .availability-btn {
+    flex: 1 1 100%;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-primary-btn,
+  .hero-secondary-btn {
+    text-align: center;
+  }
+
+  /* Widget stacks vertically */
+  .availability-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .availability-field {
+    flex: none;
+  }
+
+  .availability-field label {
+    padding-left: 4px;
+  }
+
+  .availability-btn {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    margin-top: 6px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .availability-form {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .availability-field input,
+  .availability-field select {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .availability-btn {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+}
