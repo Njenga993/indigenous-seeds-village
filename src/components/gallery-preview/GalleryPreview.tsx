@@ -7,8 +7,8 @@ import gallery2 from "../../assets/images/SSN_bed.webp";
 import gallery3 from "../../assets/images/SSN_insert.webp";
 import gallery4 from "../../assets/images/SSN_garden.webp";
 import gallery5 from "../../assets/images/SSN_shoes.webp";
-import gallery6 from "../../assets/images/SSN_seeds.webp";
-import gallery7 from "../../assets/images/SSN_truck.webp";
+import gallery6 from "../../assets/images/sunset.jpg";
+import gallery7 from "../../assets/images/cooking.png";
 import gallery8 from "../../assets/images/SSN_avocado.webp";
 
 const galleryImages = [
@@ -17,7 +17,7 @@ const galleryImages = [
   { src: gallery3, alt: "Restaurant Dining" },
   { src: gallery4, alt: "Nature Surroundings", large: true },
   { src: gallery5, alt: "Garden Landscape" },
-  { src: gallery6, alt: "Sunset View" },
+  { src: gallery6, alt: "Sunset View"  },
   { src: gallery7, alt: "Cultural Experience", large: true },
   { src: gallery8, alt: "Farm Fresh Produce" },
 ];

@@ -108,7 +108,7 @@ const Testimonials = () => {
           <span>Guest Experiences</span>
           <h2>What Our Visitors Say</h2>
         </div>
-
+       
         <div
           className="testimonials-carousel"
           onMouseEnter={() => setIsPaused(true)}

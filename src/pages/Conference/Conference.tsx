@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
+import { Helmet } from "react-helmet-async";
+
 import "./Conference.css";
 
 import conferenceHero from "../../assets/images/SSN_seats.webp";
@@ -16,7 +16,7 @@ import outdoorSpace2 from "../../assets/images/SSN_room_out.webp";
 import outdoorSpace3 from "../../assets/images/SSN_garden.webp";
 import teamBuilding1 from "../../assets/images/SSN_shoes.webp";
 import catering1 from "../../assets/images/SSN_dinning_table.webp";
-import catering2 from "../../assets/images/SSN_insert.webp";
+import catering2 from "../../assets/images/SSN_bed.webp";
 
 interface FacilityImage {
   src: string;
@@ -73,9 +73,9 @@ const facilities: Facility[] = [
       "Corporate presentations",
     ],
     images: [
-      { src: mainHall1, alt: "Main Conference Hall theatre setup" },
-      { src: mainHall2, alt: "Main Conference Hall banquet setup" },
-      { src: mainHall3, alt: "Main Conference Hall with garden views" },
+      { src: mainHall1, alt: "Main Conference Hall at Indigenous Seeds Village Gilgil — theatre setup for 100 guests" },
+      { src: mainHall2, alt: "Conference Hall banquet setup — corporate event venue Nakuru County" },
+      { src: mainHall3, alt: "Main Conference Hall with garden views — meeting venue near Lake Elementaita" },
     ],
     icon: "🏛️",
   },
@@ -113,9 +113,9 @@ const facilities: Facility[] = [
       "Small workshops",
     ],
     images: [
-      { src: meetingRoom1, alt: "Meeting Room boardroom setup" },
-      { src: meetingRoom2, alt: "Meeting Room video conference" },
-      { src: meetingRoom3, alt: "Meeting Room garden view" },
+      { src: meetingRoom1, alt: "Meeting Room boardroom setup — small conference venue Gilgil" },
+      { src: meetingRoom2, alt: "Video conferencing meeting room — hybrid meeting space Nakuru" },
+      { src: meetingRoom3, alt: "Meeting Room garden view — executive boardroom near Lake Elementaita" },
     ],
     icon: "💼",
   },
@@ -153,9 +153,9 @@ const facilities: Facility[] = [
       "Yoga and mindfulness sessions",
     ],
     images: [
-      { src: outdoorSpace1, alt: "Outdoor conference setup" },
-      { src: outdoorSpace2, alt: "Garden meeting space" },
-      { src: outdoorSpace3, alt: "Evening outdoor event" },
+      { src: outdoorSpace1, alt: "Outdoor conference setup — garden meeting space Gilgil" },
+      { src: outdoorSpace2, alt: "Open-air meeting venue surrounded by indigenous gardens Nakuru County" },
+      { src: outdoorSpace3, alt: "Evening outdoor event space — reception venue near Lake Elementaita" },
     ],
     icon: "🌿",
   },
@@ -227,9 +227,142 @@ const Conference = () => {
     document.body.style.overflow = "";
   };
 
+  // Conference Page Schema
+  const conferenceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    name: "Indigenous Seeds Village — Conference Facilities",
+    description:
+      "Host your corporate event, conference, or retreat at Indigenous Seeds Village near Lake Elementaita, Gilgil. Three conference spaces accommodating up to 120 guests with modern AV equipment, farm-to-table catering, and team building activities in Nakuru County.",
+    url: "https://village.seedfoodculturetourism.org/conference",
+    telephone: "+254712451777",
+    email: "info@seedfoodculturetourism.org",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Near Lake Elementaita, Off Nakuru-Nairobi Highway",
+      addressLocality: "Gilgil",
+      addressRegion: "Nakuru County",
+      addressCountry: "KE",
+      postalCode: "20100",
+    },
+    meetingRoom: facilities.map((f) => ({
+      "@type": "MeetingRoom",
+      name: f.name,
+      description: f.description,
+      occupancy: f.capacity,
+    })),
+  };
+
+  // FAQ Schema for Conference
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What conference facilities are available at Indigenous Seeds Village?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We have three conference spaces: the Main Conference Hall (up to 100 guests theatre-style, 120 for cocktail receptions), a Meeting Room (up to 20 guests boardroom style), and an Outdoor Conference Space (up to 60 guests). All spaces are equipped with modern AV equipment, high-speed WiFi, and offer garden views near Lake Elementaita in Gilgil, Nakuru County.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you offer conference packages with accommodation?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! We offer Day Packages (meeting space + lunch), Full-Board Packages (meeting space + accommodation + all meals), and Retreat Packages (everything plus team building activities and wellness sessions). All packages can be customized to your needs. We have 15 rooms available for conference delegates.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What team building activities are available for corporate groups?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We offer farm challenges, cooking competitions, guided nature walks, seed planting activities, cultural experiences, wellness sessions, and bird watching at Lake Elementaita. All activities are designed to foster teamwork while connecting participants with nature and Kenyan heritage.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <Navbar />
+      {/* ================================
+          COMPREHENSIVE SEO
+          ================================ */}
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          Conference Facilities & Event Venue | Indigenous Seeds Village,
+          Gilgil — Nakuru County
+        </title>
+        <meta
+          name="description"
+          content="Host your corporate event, conference, or retreat at Indigenous Seeds Village near Lake Elementaita, Gilgil. Three versatile conference spaces for up to 120 guests with modern AV equipment, farm-to-table catering, team building activities, and accommodation in Nakuru County. Day packages, full-board, and retreat packages available."
+        />
+        <meta
+          name="keywords"
+          content="conference venue Gilgil, meeting rooms Nakuru County, corporate retreat Kenya, conference facilities Lake Elementaita, team building Gilgil, event venue Nakuru, workshop space Kenya, conference with accommodation, corporate catering Gilgil, conference hall Nakuru, outdoor meeting space Kenya, boardroom Gilgil, seminar venue Nakuru County, conference packages Kenya, MICE tourism Kenya, corporate event venue near Lake Nakuru, business retreat Kenya"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
+        {/* Geographic Tags */}
+        <meta name="geo.region" content="KE-31" />
+        <meta name="geo.placename" content="Gilgil, Nakuru County, Kenya" />
+        <meta name="geo.position" content="-0.5036;36.3188" />
+
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href="https://village.seedfoodculturetourism.org/conference"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Conference Facilities & Event Venue | Indigenous Seeds Village, Gilgil"
+        />
+        <meta
+          property="og:description"
+          content="Host your corporate event at Indigenous Seeds Village near Lake Elementaita. Three conference spaces for up to 120 guests with AV equipment, catering, and accommodation."
+        />
+        <meta
+          property="og:url"
+          content="https://village.seedfoodculturetourism.org/conference"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+        <meta property="og:site_name" content="Indigenous Seeds Village" />
+        <meta property="og:locale" content="en_KE" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Conference Facilities & Event Venue | Indigenous Seeds Village"
+        />
+        <meta
+          name="twitter:description"
+          content="Host your corporate event near Lake Elementaita. Conference spaces for up to 120 guests with AV, catering & accommodation."
+        />
+        <meta
+          name="twitter:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(conferenceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+
+     
 
       {/* ================================
           HERO SECTION
@@ -244,8 +377,8 @@ const Conference = () => {
           <span className="conf-hero-tag">Meet & Inspire</span>
           <h1>Conference Facilities</h1>
           <p>
-            Host your next event in a setting that blends professional excellence 
-            with natural beauty. Our conference facilities are designed to inspire 
+            Host your next event in a setting that blends professional excellence
+            with natural beauty. Our conference facilities are designed to inspire
             creativity, foster collaboration, and leave a lasting impression.
           </p>
         </div>
@@ -260,10 +393,10 @@ const Conference = () => {
             <span className="section-tag">Work Meets Nature</span>
             <h2>Conferences That Inspire</h2>
             <p>
-              At Indigenous Seeds Village, we believe the best meetings happen 
-              when people are comfortable, connected, and inspired by their 
-              surroundings. Our conference facilities combine modern amenities 
-              with the tranquility of nature — creating an environment where 
+              At Indigenous Seeds Village, we believe the best meetings happen
+              when people are comfortable, connected, and inspired by their
+              surroundings. Our conference facilities combine modern amenities
+              with the tranquility of nature — creating an environment where
               ideas flourish and teams grow stronger.
             </p>
             <div className="conf-summary">
@@ -297,14 +430,14 @@ const Conference = () => {
             <span className="section-tag">Our Spaces</span>
             <h2>Choose Your Perfect Venue</h2>
             <p>
-              Three distinct spaces, each designed to suit different types of 
-              gatherings. Click on any facility to view full details and layout 
+              Three distinct spaces, each designed to suit different types of
+              gatherings. Click on any facility to view full details and layout
               options.
             </p>
           </div>
 
           <div className="facilities-grid">
-            {facilities.map((facility, index) => (
+            {facilities.map((facility) => (
               <div
                 key={facility.id}
                 className="facility-card"
@@ -348,7 +481,7 @@ const Conference = () => {
             <span className="section-tag">Complete Experience</span>
             <h2>Additional Services</h2>
             <p>
-              Beyond meeting spaces, we offer everything you need to make your 
+              Beyond meeting spaces, we offer everything you need to make your
               conference or retreat a complete success.
             </p>
           </div>
@@ -356,7 +489,7 @@ const Conference = () => {
             {additionalServices.map((service, index) => (
               <div key={index} className="service-card">
                 <div className="service-image">
-                  <img src={service.image} alt={service.title} />
+                  <img src={service.image} alt={service.title + " at Indigenous Seeds Village conference venue Gilgil"} />
                 </div>
                 <div className="service-content">
                   <span className="service-icon">{service.icon}</span>
@@ -393,7 +526,7 @@ const Conference = () => {
               </div>
               <h4>Inspiring Location</h4>
               <p>
-                Near Lake Elementaita, surrounded by indigenous gardens and 
+                Near Lake Elementaita, surrounded by indigenous gardens and
                 natural beauty — far from the distractions of the city.
               </p>
             </div>
@@ -407,7 +540,7 @@ const Conference = () => {
               </div>
               <h4>Modern Technology</h4>
               <p>
-                All spaces are equipped with professional AV equipment, 
+                All spaces are equipped with professional AV equipment,
                 high-speed Wi-Fi, and video conferencing capabilities.
               </p>
             </div>
@@ -420,7 +553,7 @@ const Conference = () => {
               </div>
               <h4>Farm-to-Table Catering</h4>
               <p>
-                Exceptional food from our own gardens — healthy, delicious, 
+                Exceptional food from our own gardens — healthy, delicious,
                 and sustainably sourced.
               </p>
             </div>
@@ -433,7 +566,7 @@ const Conference = () => {
               </div>
               <h4>Work-Life Balance</h4>
               <p>
-                Combine meetings with nature walks, farm experiences, and 
+                Combine meetings with nature walks, farm experiences, and
                 wellness sessions for a truly balanced retreat.
               </p>
             </div>
@@ -445,7 +578,7 @@ const Conference = () => {
               </div>
               <h4>Sustainable Venue</h4>
               <p>
-                Host your event at a venue that prioritizes environmental 
+                Host your event at a venue that prioritizes environmental
                 sustainability and community impact.
               </p>
             </div>
@@ -460,7 +593,7 @@ const Conference = () => {
               </div>
               <h4>Dedicated Coordinator</h4>
               <p>
-                A dedicated conference coordinator ensures every detail is 
+                A dedicated conference coordinator ensures every detail is
                 handled, so you can focus on your event.
               </p>
             </div>
@@ -478,9 +611,9 @@ const Conference = () => {
               <span className="section-tag">Conference Packages</span>
               <h2>Tailored Packages for Every Event</h2>
               <p>
-                We offer flexible packages that can be customized to your specific 
-                needs — from half-day meetings to multi-day conferences with full 
-                accommodation. Contact us to discuss your requirements and receive 
+                We offer flexible packages that can be customized to your specific
+                needs — from half-day meetings to multi-day conferences with full
+                accommodation. Contact us to discuss your requirements and receive
                 a personalized quote.
               </p>
               <div className="packages-list">
@@ -531,8 +664,8 @@ const Conference = () => {
           <div className="conf-cta-content">
             <h2>Ready to Plan Your Event?</h2>
             <p>
-              Get in touch with our team to discuss your requirements, check 
-              availability, and receive a personalized quote for your conference 
+              Get in touch with our team to discuss your requirements, check
+              availability, and receive a personalized quote for your conference
               or retreat.
             </p>
             <div className="conf-cta-buttons">
@@ -553,7 +686,6 @@ const Conference = () => {
       {isModalOpen && selectedFacility && (
         <div className="conf-modal-overlay" onClick={closeModal}>
           <div className="conf-modal-container" onClick={(e) => e.stopPropagation()}>
-            {/* Close Button */}
             <button className="conf-modal-close" onClick={closeModal} aria-label="Close modal">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -562,7 +694,6 @@ const Conference = () => {
             </button>
 
             <div className="conf-modal-body">
-              {/* Image Gallery */}
               <div className="conf-modal-gallery">
                 <div className="conf-modal-image-wrapper">
                   <img
@@ -601,7 +732,6 @@ const Conference = () => {
                 </div>
               </div>
 
-              {/* Details */}
               <div className="conf-modal-details">
                 <div className="conf-modal-header">
                   <span className="conf-modal-icon">{selectedFacility.icon}</span>
@@ -611,13 +741,11 @@ const Conference = () => {
 
                 <p className="conf-modal-description">{selectedFacility.description}</p>
 
-                {/* Capacity Badge */}
                 <div className="conf-modal-capacity">
                   <span className="capacity-label">Capacity</span>
                   <span className="capacity-value">{selectedFacility.capacity}</span>
                 </div>
 
-                {/* Layout Options */}
                 <div className="conf-modal-section">
                   <h4>Layout Options</h4>
                   <div className="layout-grid">
@@ -630,7 +758,6 @@ const Conference = () => {
                   </div>
                 </div>
 
-                {/* Features */}
                 <div className="conf-modal-section">
                   <h4>Equipment & Features</h4>
                   <div className="features-grid">
@@ -642,7 +769,6 @@ const Conference = () => {
                   </div>
                 </div>
 
-                {/* Best For */}
                 <div className="conf-modal-section">
                   <h4>Best For</h4>
                   <div className="best-for-list">
@@ -654,7 +780,6 @@ const Conference = () => {
                   </div>
                 </div>
 
-                {/* CTA */}
                 <div className="conf-modal-footer">
                   <Link
                     to="/contact"
@@ -670,7 +795,7 @@ const Conference = () => {
         </div>
       )}
 
-      <Footer />
+      
     </>
   );
 };

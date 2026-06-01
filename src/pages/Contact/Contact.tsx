@@ -1,13 +1,186 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/footer/Footer";
-import Navbar from "../../components/navbar/Navbar";
+import { Helmet } from "react-helmet-async";
+
 import "./Contact.css";
 
 const Contact = () => {
+  // Contact Page Schema
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    name: "Indigenous Seeds Village",
+    description:
+      "Contact Indigenous Seeds Village near Lake Elementaita, Gilgil. Call +254712451777 or email info@seedfoodculturetourism.org for reservations, inquiries, and directions to our heritage retreat in Nakuru County.",
+    url: "https://village.seedfoodculturetourism.org/contact",
+    telephone: "+254712451777",
+    email: "info@seedfoodculturetourism.org",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Off Nakuru-Nairobi Highway, Near Lake Elementaita",
+      addressLocality: "Gilgil",
+      addressRegion: "Nakuru County",
+      addressCountry: "KE",
+      postalCode: "20166",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -0.5036,
+      longitude: 36.3188,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "06:00",
+        closes: "22:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "06:00",
+        closes: "23:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Sunday",
+        opens: "07:00",
+        closes: "21:00",
+      },
+    ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+254712451777",
+        contactType: "reservations",
+        availableLanguage: ["English", "Swahili"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: "+254712451777",
+        contactType: "customer service",
+        availableLanguage: ["English", "Swahili"],
+      },
+    ],
+    sameAs: [
+      "https://facebook.com/IndigenousSeedsVillage",
+      "https://instagram.com/indigenousseedsvillage",
+      "https://twitter.com/IndigenousSeedsV",
+      "https://youtube.com/@IndigenousSeedsVillage",
+    ],
+  };
+
+  // FAQ Schema for Contact
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I contact Indigenous Seeds Village?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You can reach us by phone at +254712451777, by email at info@seedfoodculturetourism.org, or via WhatsApp at +254712451777. Our physical address is Off Nakuru-Nairobi Highway, Near Lake Elementaita, Gilgil, Nakuru County, Kenya.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where is Indigenous Seeds Village located?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Indigenous Seeds Village is located near Lake Elementaita, off the Nakuru-Nairobi Highway in Gilgil, Nakuru County. We are approximately 2.5 km from Lake Elementaita, 15 km from Nakuru Town, 30 km from Lake Nakuru National Park, and 45 km from Naivasha Town.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the operating hours of Indigenous Seeds Village?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our operating hours are Monday to Friday 6:00 AM - 10:00 PM, Saturday 6:00 AM - 11:00 PM, and Sunday & Holidays 7:00 AM - 9:00 PM. Check-in time is 12:00 PM and check-out is 10:00 AM. Reception is open 24 hours for guest assistance.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <Navbar />
+      {/* ================================
+          COMPREHENSIVE SEO
+          ================================ */}
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          Contact Us | Indigenous Seeds Village — Gilgil, Nakuru County
+        </title>
+        <meta
+          name="description"
+          content="Contact Indigenous Seeds Village near Lake Elementaita, Gilgil. Call +254712451777 or email info@seedfoodculturetourism.org for reservations, inquiries, and directions. Located off Nakuru-Nairobi Highway, Nakuru County, Kenya. Open daily 6:00 AM - 10:00 PM."
+        />
+        <meta
+          name="keywords"
+          content="contact Indigenous Seeds Village, hotel phone number Gilgil, Lake Elementaita hotel contact, Nakuru County accommodation contact, hotel email Kenya, WhatsApp hotel booking Gilgil, hotel address Nakuru, directions to Indigenous Seeds Village, hotel operating hours Gilgil, contact heritage retreat Kenya, reservations Nakuru County, hotel near Lake Nakuru contact"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
+        {/* Geographic Tags */}
+        <meta name="geo.region" content="KE-31" />
+        <meta name="geo.placename" content="Gilgil, Nakuru County, Kenya" />
+        <meta name="geo.position" content="-0.5036;36.3188" />
+
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href="https://village.seedfoodculturetourism.org/contact"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Contact Us | Indigenous Seeds Village — Gilgil, Nakuru County"
+        />
+        <meta
+          property="og:description"
+          content="Contact Indigenous Seeds Village near Lake Elementaita. Call +254712451777 or email info@seedfoodculturetourism.org for reservations and inquiries."
+        />
+        <meta
+          property="og:url"
+          content="https://village.seedfoodculturetourism.org/contact"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+        <meta property="og:site_name" content="Indigenous Seeds Village" />
+        <meta property="og:locale" content="en_KE" />
+        <meta property="og:phone_number" content="+254712451777" />
+        <meta property="og:email" content="info@seedfoodculturetourism.org" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Contact Us | Indigenous Seeds Village — Gilgil, Nakuru County"
+        />
+        <meta
+          name="twitter:description"
+          content="Contact Indigenous Seeds Village near Lake Elementaita. Call +254712451777 for reservations."
+        />
+        <meta
+          name="twitter:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(contactSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+
       
+
       {/* Hero Banner */}
       <section className="contact-hero">
         <div className="contact-hero-overlay" />
@@ -24,10 +197,10 @@ const Contact = () => {
       {/* Main Contact Section */}
       <section className="contact-main">
         <div className="container">
-          
+
           {/* Contact Cards Grid */}
           <div className="contact-cards">
-            
+
             {/* Address Card */}
             <div className="contact-card">
               <div className="contact-card-icon">
@@ -49,14 +222,15 @@ const Contact = () => {
               <div className="contact-detail">
                 <p className="detail-label">Postal Address</p>
                 <p className="detail-value">
-                  P.O. Box 1234 - 20100<br />
+                  P.O. Box 334 - 20166<br />
                   Nakuru, Kenya
                 </p>
               </div>
-              <Link 
-                to="https://maps.google.com" 
+              <Link
+                to="https://maps.google.com"
                 target="_blank"
                 className="direction-link"
+                aria-label="Get directions to Indigenous Seeds Village on Google Maps"
               >
                 Get Directions →
               </Link>
@@ -72,27 +246,16 @@ const Contact = () => {
               <h3>Phone Numbers</h3>
               <div className="contact-detail">
                 <p className="detail-label">Reservations</p>
-                <a href="tel:+254700000000" className="detail-value phone-link">
-                  +254 700 000 000
+                <a href="tel:+254712451777" className="detail-value phone-link">
+                  +254 712 451 777
                 </a>
               </div>
-              <div className="contact-detail">
-                <p className="detail-label">General Inquiries</p>
-                <a href="tel:+254711000000" className="detail-value phone-link">
-                  +254 711 000 000
-                </a>
-              </div>
-              <div className="contact-detail">
-                <p className="detail-label">Conference Booking</p>
-                <a href="tel:+254722000000" className="detail-value phone-link">
-                  +254 722 000 000
-                </a>
-              </div>
+
               <div className="contact-detail">
                 <p className="detail-label">WhatsApp</p>
-                <a 
-                  href="https://wa.me/254700000000" 
-                  target="_blank" 
+                <a
+                  href="https://wa.me/254712451777"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="detail-value phone-link whatsapp-link"
                 >
@@ -112,26 +275,14 @@ const Contact = () => {
               <h3>Email Addresses</h3>
               <div className="contact-detail">
                 <p className="detail-label">General Inquiries</p>
-                <a href="mailto:info@indigenousseedsvillage.co.ke" className="detail-value email-link">
-                  info@indigenousseedsvillage.co.ke
+                <a href="mailto:info@seedfoodculturetourism.org" className="detail-value email-link">
+                  info@seedfoodculturetourism.org
                 </a>
               </div>
               <div className="contact-detail">
                 <p className="detail-label">Reservations</p>
-                <a href="mailto:bookings@indigenousseedsvillage.co.ke" className="detail-value email-link">
-                  bookings@indigenousseedsvillage.co.ke
-                </a>
-              </div>
-              <div className="contact-detail">
-                <p className="detail-label">Events & Conference</p>
-                <a href="mailto:events@indigenousseedsvillage.co.ke" className="detail-value email-link">
-                  events@indigenousseedsvillage.co.ke
-                </a>
-              </div>
-              <div className="contact-detail">
-                <p className="detail-label">Media & Press</p>
-                <a href="mailto:media@indigenousseedsvillage.co.ke" className="detail-value email-link">
-                  media@indigenousseedsvillage.co.ke
+                <a href="mailto:booking@seedfoodculturetourism.org" className="detail-value email-link">
+                  booking@seedfoodculturetourism.org
                 </a>
               </div>
             </div>
@@ -215,11 +366,12 @@ const Contact = () => {
                 Indigenous Seeds Village.
               </p>
               <div className="social-links-detailed">
-                <a 
-                  href="https://facebook.com" 
-                  target="_blank" 
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="social-link-detailed"
+                  aria-label="Follow Indigenous Seeds Village on Facebook"
                 >
                   <span className="social-platform-icon">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -231,12 +383,13 @@ const Contact = () => {
                     <span className="platform-handle">@IndigenousSeedsVillage</span>
                   </div>
                 </a>
-                
-                <a 
-                  href="https://instagram.com" 
-                  target="_blank" 
+
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="social-link-detailed"
+                  aria-label="Follow Indigenous Seeds Village on Instagram"
                 >
                   <span className="social-platform-icon">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -251,11 +404,12 @@ const Contact = () => {
                   </div>
                 </a>
 
-                <a 
-                  href="https://twitter.com" 
-                  target="_blank" 
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="social-link-detailed"
+                  aria-label="Follow Indigenous Seeds Village on Twitter"
                 >
                   <span className="social-platform-icon">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -268,11 +422,12 @@ const Contact = () => {
                   </div>
                 </a>
 
-                <a 
-                  href="https://youtube.com" 
-                  target="_blank" 
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="social-link-detailed"
+                  aria-label="Subscribe to Indigenous Seeds Village on YouTube"
                 >
                   <span className="social-platform-icon">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -300,7 +455,6 @@ const Contact = () => {
               </p>
             </div>
             <div className="map-container">
-              {/* Replace with actual Google Maps embed */}
               <div className="map-placeholder">
                 <div className="map-placeholder-content">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -309,9 +463,9 @@ const Contact = () => {
                   </svg>
                   <h3>Indigenous Seeds Village</h3>
                   <p>Near Lake Elementaita, Nakuru County</p>
-                  <a 
-                    href="https://maps.google.com" 
-                    target="_blank" 
+                  <a
+                    href="https://maps.google.com"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="map-direction-btn"
                   >
@@ -353,9 +507,9 @@ const Contact = () => {
                 an organization dedicated to conserving indigenous seeds and
                 promoting agricultural biodiversity across Kenya.
               </p>
-              <a 
-                href="https://seedsaverskenya.org" 
-                target="_blank" 
+              <a
+                href="https://seedsaverskenya.org"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="partner-link"
               >
@@ -367,7 +521,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 };

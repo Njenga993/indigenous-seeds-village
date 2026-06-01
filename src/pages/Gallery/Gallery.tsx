@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
+import { Helmet } from "react-helmet-async";
+
 import "./Gallery.css";
 
 // Import all gallery images
@@ -30,28 +30,28 @@ interface GalleryImage {
 
 const galleryImages: GalleryImage[] = [
   // Accommodation
-  { id: 1, src: gallery1, alt: "Standard Single Room", category: "accommodation" },
-  { id: 2, src: gallery2, alt: "Standard Double Room Interior", category: "accommodation" },
-  { id: 3, src: gallery3, alt: "Family Cottage Exterior", category: "accommodation" },
-  { id: 4, src: gallery4, alt: "Executive Suite Bedroom", category: "accommodation" },
+  { id: 1, src: gallery1, alt: "Family Cottage at Indigenous Seeds Village Gilgil — heritage retreat accommodation", category: "accommodation" },
+  { id: 2, src: gallery2, alt: "Standard Double Room interior — eco-friendly hotel room near Lake Elementaita", category: "accommodation" },
+  { id: 3, src: gallery3, alt: "Cozy guest room with garden views at Indigenous Seeds Village Nakuru County", category: "accommodation" },
+  { id: 4, src: gallery4, alt: "Executive Suite bedroom — luxury accommodation Gilgil Kenya", category: "accommodation" },
 
   // Restaurant & Cuisine
-  { id: 5, src: gallery5, alt: "Indigenous Cuisine Platter", category: "restaurant" },
-  { id: 6, src: gallery6, alt: "Farm-to-Table Dining", category: "restaurant" },
-  { id: 7, src: gallery7, alt: "Outdoor Dining Terrace", category: "restaurant" },
-  { id: 8, src: gallery8, alt: "Traditional Cooking Experience", category: "restaurant" },
+  { id: 5, src: gallery5, alt: "Indigenous cuisine platter — traditional Kenyan food at Indigenous Seeds Village", category: "restaurant" },
+  { id: 6, src: gallery6, alt: "Farm-to-table dining experience — organic restaurant Gilgil Nakuru County", category: "restaurant" },
+  { id: 7, src: gallery7, alt: "Outdoor dining terrace surrounded by indigenous gardens near Lake Elementaita", category: "restaurant" },
+  { id: 8, src: gallery8, alt: "Traditional cooking experience — indigenous food workshop Kenya", category: "restaurant" },
 
   // Nature & Gardens
-  { id: 9, src: gallery9, alt: "Indigenous Gardens at Sunrise", category: "nature" },
-  { id: 10, src: gallery10, alt: "Seed Bank Collection", category: "nature" },
-  { id: 11, src: gallery11, alt: "Lake Elementaita View", category: "nature" },
-  { id: 12, src: gallery12, alt: "Bird Watching Paradise", category: "nature" },
+  { id: 9, src: gallery9, alt: "Indigenous gardens at sunrise — eco-retreat surroundings Gilgil Kenya", category: "nature" },
+  { id: 10, src: gallery10, alt: "Seed bank collection — indigenous seed conservation at Seed Savers Network Kenya", category: "nature" },
+  { id: 11, src: gallery11, alt: "Scenic Lake Elementaita view from Indigenous Seeds Village Nakuru County", category: "nature" },
+  { id: 12, src: gallery12, alt: "Bird watching paradise — diverse bird species at Lake Elementaita UNESCO site", category: "nature" },
 
   // Conference & Events
-  { id: 13, src: gallery13, alt: "Main Conference Hall Setup", category: "conference" },
-  { id: 14, src: gallery14, alt: "Corporate Event in Progress", category: "conference" },
-  { id: 15, src: gallery15, alt: "Outdoor Meeting Space", category: "conference" },
-  { id: 16, src: gallery16, alt: "Team Building Activity", category: "conference" },
+  { id: 13, src: gallery13, alt: "Main Conference Hall setup — corporate event venue Gilgil Nakuru County", category: "conference" },
+  { id: 14, src: gallery14, alt: "Conference seating arrangement — meeting space near Lake Elementaita", category: "conference" },
+  { id: 15, src: gallery15, alt: "Outdoor meeting space — garden conference venue Indigenous Seeds Village", category: "conference" },
+  { id: 16, src: gallery16, alt: "Team building activity space — corporate retreat venue Nakuru Kenya", category: "conference" },
 ];
 
 const categories = [
@@ -79,7 +79,6 @@ const Gallery = () => {
     }
   }, [activeCategory]);
 
-  // Staggered animation on mount and filter change
   useEffect(() => {
     setLoadedImages([]);
     filteredImages.forEach((_, index) => {
@@ -115,7 +114,6 @@ const Gallery = () => {
     [filteredImages.length]
   );
 
-  // Keyboard navigation for lightbox
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!lightboxOpen) return;
@@ -128,9 +126,108 @@ const Gallery = () => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [lightboxOpen, navigateLightbox]);
 
+  // Gallery Page Schema
+  const gallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Indigenous Seeds Village Photo Gallery",
+    description:
+      "Explore our photo gallery showcasing the beauty of Indigenous Seeds Village — accommodation, restaurant, indigenous gardens, conference facilities, and Lake Elementaita views in Gilgil, Nakuru County.",
+    url: "https://village.seedfoodculturetourism.org/gallery",
+    about: {
+      "@type": "Hotel",
+      name: "Indigenous Seeds Village",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Gilgil",
+        addressRegion: "Nakuru County",
+        addressCountry: "KE",
+      },
+    },
+    hasPart: galleryImages.map((img) => ({
+      "@type": "Photograph",
+      name: img.alt,
+      url: `https://village.seedfoodculturetourism.org/gallery#image-${img.id}`,
+    })),
+  };
+
   return (
     <>
-      <Navbar />
+      {/* ================================
+          COMPREHENSIVE SEO
+          ================================ */}
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          Photo Gallery | Indigenous Seeds Village — Gilgil, Nakuru County
+        </title>
+        <meta
+          name="description"
+          content="Explore our photo gallery showcasing Indigenous Seeds Village near Lake Elementaita, Gilgil. Browse 16 images of our accommodation, farm-to-table restaurant, indigenous gardens, conference facilities, and scenic views in Nakuru County, Kenya."
+        />
+        <meta
+          name="keywords"
+          content="Indigenous Seeds Village photos, hotel gallery Gilgil, Lake Elementaita hotel images, Nakuru County accommodation pictures, eco-lodge Kenya photos, heritage retreat gallery, indigenous gardens photos, conference venue images Gilgil, Kenyan hotel photo gallery, farm-to-table restaurant pictures Kenya"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+        {/* Geographic Tags */}
+        <meta name="geo.region" content="KE-31" />
+        <meta name="geo.placename" content="Gilgil, Nakuru County, Kenya" />
+        <meta name="geo.position" content="-0.5036;36.3188" />
+
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href="https://village.seedfoodculturetourism.org/gallery"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Photo Gallery | Indigenous Seeds Village — Gilgil, Nakuru County"
+        />
+        <meta
+          property="og:description"
+          content="Browse our photo gallery showcasing accommodation, restaurant, gardens, conference facilities, and Lake Elementaita views at Indigenous Seeds Village."
+        />
+        <meta
+          property="og:url"
+          content="https://village.seedfoodculturetourism.org/gallery"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Indigenous Seeds Village" />
+        <meta property="og:locale" content="en_KE" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Photo Gallery | Indigenous Seeds Village — Gilgil, Nakuru County"
+        />
+        <meta
+          name="twitter:description"
+          content="Browse our photo gallery — accommodation, restaurant, gardens & conference facilities at Indigenous Seeds Village."
+        />
+        <meta
+          name="twitter:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(gallerySchema)}
+        </script>
+      </Helmet>
+
+      
 
       {/* ================================
           HERO SECTION
@@ -142,8 +239,8 @@ const Gallery = () => {
           <span className="gallery-hero-tag">Visual Journey</span>
           <h1>Our Gallery</h1>
           <p>
-            Explore the beauty of Indigenous Seeds Village through our curated 
-            collection of images — from serene accommodation spaces to vibrant 
+            Explore the beauty of Indigenous Seeds Village through our curated
+            collection of images — from serene accommodation spaces to vibrant
             gardens, exquisite cuisine, and memorable events.
           </p>
         </div>
@@ -187,6 +284,7 @@ const Gallery = () => {
               {filteredImages.map((image, index) => (
                 <div
                   key={image.id}
+                  id={`image-${image.id}`}
                   className={`gallery-item ${
                     index % 5 === 0 || index % 7 === 0 ? "gallery-item-large" : ""
                   } ${index % 3 === 0 ? "gallery-item-tall" : ""} ${
@@ -230,7 +328,7 @@ const Gallery = () => {
           <div className="gallery-cta-content">
             <h2>Want to Experience This in Person?</h2>
             <p>
-              Pictures tell a story, but being here is something else entirely. 
+              Pictures tell a story, but being here is something else entirely.
               Book your stay and create your own memories at Indigenous Seeds Village.
             </p>
             <div className="gallery-cta-buttons">
@@ -251,7 +349,6 @@ const Gallery = () => {
       {lightboxOpen && (
         <div className="lightbox-overlay" onClick={closeLightbox}>
           <div className="lightbox-container" onClick={(e) => e.stopPropagation()}>
-            {/* Close Button */}
             <button className="lightbox-close" onClick={closeLightbox} aria-label="Close lightbox">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -259,7 +356,6 @@ const Gallery = () => {
               </svg>
             </button>
 
-            {/* Navigation Arrows */}
             <button
               className="lightbox-arrow lightbox-prev"
               onClick={() => navigateLightbox("prev")}
@@ -280,7 +376,6 @@ const Gallery = () => {
               </svg>
             </button>
 
-            {/* Image */}
             <div className="lightbox-image-wrapper">
               <img
                 src={filteredImages[lightboxIndex].src}
@@ -288,7 +383,6 @@ const Gallery = () => {
               />
             </div>
 
-            {/* Image Info */}
             <div className="lightbox-info">
               <h3>{filteredImages[lightboxIndex].alt}</h3>
               <span className="lightbox-category">
@@ -306,7 +400,7 @@ const Gallery = () => {
         </div>
       )}
 
-      <Footer />
+      
     </>
   );
 };

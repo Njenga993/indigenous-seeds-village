@@ -1,32 +1,32 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
+import { Helmet } from "react-helmet-async";
+
 import "./Experiences.css";
 
 import experiencesHero from "../../assets/images/SSN_garden.webp";
-import natureWalk1 from "../../assets/images/SSN_up.webp";
-import natureWalk2 from "../../assets/images/SSN_room.webp";
-import natureWalk3 from "../../assets/images/SSN_garden.webp";
-import seedTour1 from "../../assets/images/SSN_crates.webp";
+import natureWalk1 from "../../assets/images/walk.jpg";
+import natureWalk2 from "../../assets/images/naturewalk.jpg";
+import natureWalk3 from "../../assets/images/crater.jpg";
+import seedTour1 from "../../assets/images/seeds.webp";
 import seedTour2 from "../../assets/images/SSN_banner.webp";
 import seedTour3 from "../../assets/images/SSN_bank.webp";
-import birdWatching1 from "../../assets/images/SSN_truck_front.webp";
-import birdWatching2 from "../../assets/images/SSN_tools.webp";
-import birdWatching3 from "../../assets/images/SSN_seeds.webp";
-import farmExperience1 from "../../assets/images/SSN_toilet.webp";
-import farmExperience2 from "../../assets/images/SSN_truck.webp";
-import farmExperience3 from "../../assets/images/SSN_pink.webp";
-import culturalEvening1 from "../../assets/images/SSN_insert.webp";
+import birdWatching1 from "../../assets/images/bird.jpg";
+import birdWatching2 from "../../assets/images/bird_watch.jpg";
+import birdWatching3 from "../../assets/images/watch_bird.jpg";
+import farmExperience1 from "../../assets/images/agri002.jpg";
+import farmExperience2 from "../../assets/images/holding.webp";
+import farmExperience3 from "../../assets/images/permculture.jpeg";
+import culturalEvening1 from "../../assets/images/seedschool.webp";
 import culturalEvening2 from "../../assets/images/SSN_room_out.webp";
 import culturalEvening3 from "../../assets/images/SSN_counter.webp";
-import foodWorkshop1 from "../../assets/images/SSN_restuarant.webp";
+import foodWorkshop1 from "../../assets/images/cooking.png";
 import foodWorkshop2 from "../../assets/images/SSN_garden.webp";
 import foodWorkshop3 from "../../assets/images/SSN_fruits.webp";
-import meditation1 from "../../assets/images/SSN_hall.webp";
-import meditation2 from "../../assets/images/SSN_avocado.webp";
-import photography1 from "../../assets/images/SSN_bank.webp";
-import photography2 from "../../assets/images/SSN_banner.webp";
+import meditation1 from "../../assets/images/well.jpg";
+import meditation2 from "../../assets/images/meditation.jpg";
+import photography1 from "../../assets/images/photo.jpg";
+import photography2 from "../../assets/images/bird.jpg";
 
 interface ExperienceImage {
   src: string;
@@ -75,11 +75,11 @@ const experiences: Experience[] = [
       "Light jacket (mornings)",
     ],
     images: [
-      { src: natureWalk1, alt: "Nature trail through indigenous gardens" },
-      { src: natureWalk2, alt: "Guided walk with botanist" },
-      { src: natureWalk3, alt: "Scenic landscape views" },
+      { src: natureWalk1, alt: "Guided nature walk through indigenous gardens at Indigenous Seeds Village Gilgil" },
+      { src: natureWalk2, alt: "Botanical nature tour with expert guide near Lake Elementaita Nakuru County" },
+      { src: natureWalk3, alt: "Scenic landscape views from nature trails at Indigenous Seeds Village" },
     ],
-    icon: "🌿",
+    icon: "",
   },
   {
     id: 2,
@@ -107,11 +107,11 @@ const experiences: Experience[] = [
       "Camera",
     ],
     images: [
-      { src: seedTour1, alt: "Living seed bank display" },
-      { src: seedTour2, alt: "Seed conservationist explaining varieties" },
-      { src: seedTour3, alt: "Indigenous seeds close-up" },
+      { src: seedTour1, alt: "Living seed bank display at Indigenous Seeds Village Gilgil Kenya" },
+      { src: seedTour2, alt: "Seed conservationist explaining indigenous seed varieties Nakuru County" },
+      { src: seedTour3, alt: "Close-up of indigenous seeds preserved at Seed Savers Network Kenya" },
     ],
-    icon: "🌱",
+    icon: "",
   },
   {
     id: 3,
@@ -140,11 +140,11 @@ const experiences: Experience[] = [
       "Water bottle",
     ],
     images: [
-      { src: birdWatching1, alt: "Flamingos at Lake Elementaita" },
-      { src: birdWatching2, alt: "Guide with binoculars" },
-      { src: birdWatching3, alt: "Eagle in flight" },
+      { src: birdWatching1, alt: "Flamingos at Lake Elementaita — bird watching near Indigenous Seeds Village Gilgil" },
+      { src: birdWatching2, alt: "Expert birding guide with binoculars at Lake Elementaita Nakuru County" },
+      { src: birdWatching3, alt: "African fish eagle in flight — bird watching Kenya Lake Elementaita" },
     ],
-    icon: "🦅",
+    icon: "",
   },
   {
     id: 4,
@@ -173,11 +173,11 @@ const experiences: Experience[] = [
       "Enthusiasm!",
     ],
     images: [
-      { src: farmExperience1, alt: "Planting in the organic garden" },
-      { src: farmExperience2, alt: "Harvesting indigenous vegetables" },
-      { src: farmExperience3, alt: "Learning composting techniques" },
+      { src: farmExperience1, alt: "Organic farm experience — planting at Indigenous Seeds Village Gilgil" },
+      { src: farmExperience2, alt: "Harvesting indigenous vegetables at sustainable farm Nakuru County" },
+      { src: farmExperience3, alt: "Learning permaculture and composting techniques Kenya" },
     ],
-    icon: "👨‍🌾",
+    icon: "",
   },
   {
     id: 5,
@@ -203,11 +203,11 @@ const experiences: Experience[] = [
       "Open mind and willingness to participate",
     ],
     images: [
-      { src: culturalEvening1, alt: "Traditional dance performance" },
-      { src: culturalEvening2, alt: "Storytelling around the bonfire" },
-      { src: culturalEvening3, alt: "Musicians playing traditional instruments" },
+      { src: culturalEvening1, alt: "Traditional Kenyan dance performance at Indigenous Seeds Village Gilgil" },
+      { src: culturalEvening2, alt: "Storytelling around bonfire — cultural experience Nakuru County" },
+      { src: culturalEvening3, alt: "Traditional musicians performing at heritage retreat Kenya" },
     ],
-    icon: "🥁",
+    icon: "",
   },
   {
     id: 6,
@@ -234,11 +234,11 @@ const experiences: Experience[] = [
       "Notebook for extra tips",
     ],
     images: [
-      { src: foodWorkshop1, alt: "Cooking workshop in progress" },
-      { src: foodWorkshop2, alt: "Preparing traditional dishes" },
-      { src: foodWorkshop3, alt: "Finished meal presentation" },
+      { src: foodWorkshop1, alt: "Indigenous food cooking workshop at Indigenous Seeds Village Gilgil" },
+      { src: foodWorkshop2, alt: "Preparing traditional Kenyan dishes with indigenous ingredients" },
+      { src: foodWorkshop3, alt: "Finished traditional meal presentation — Kenyan cuisine workshop" },
     ],
-    icon: "👩‍🍳",
+    icon: "",
   },
   {
     id: 7,
@@ -264,10 +264,10 @@ const experiences: Experience[] = [
       "Open mind",
     ],
     images: [
-      { src: meditation1, alt: "Meditation in the garden" },
-      { src: meditation2, alt: "Wellness session at sunset" },
+      { src: meditation1, alt: "Outdoor meditation session in indigenous gardens Gilgil Kenya" },
+      { src: meditation2, alt: "Sunset wellness retreat at Indigenous Seeds Village Nakuru County" },
     ],
-    icon: "🧘",
+    icon: "",
   },
   {
     id: 8,
@@ -294,10 +294,10 @@ const experiences: Experience[] = [
       "Weather-appropriate clothing",
     ],
     images: [
-      { src: photography1, alt: "Sunset photography session" },
-      { src: photography2, alt: "Nature macro photography" },
+      { src: photography1, alt: "Golden hour photography tour at Lake Elementaita near Indigenous Seeds Village" },
+      { src: photography2, alt: "Nature and wildlife macro photography session Gilgil Kenya" },
     ],
-    icon: "📸",
+    icon: "",
   },
 ];
 
@@ -319,9 +319,141 @@ const Experiences = () => {
     document.body.style.overflow = "";
   };
 
+  // Experiences Page Schema
+  const experiencesSchema = {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: "Indigenous Seeds Village — Experiences & Activities",
+    description:
+      "Discover 8 unique experiences at Indigenous Seeds Village near Lake Elementaita, Gilgil. Nature walks, bird watching, seed conservation tours, farm experiences, cultural evenings, cooking workshops, wellness sessions, and photography tours in Nakuru County.",
+    url: "https://village.seedfoodculturetourism.org/experiences",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Gilgil",
+      addressRegion: "Nakuru County",
+      addressCountry: "KE",
+    },
+    touristType: [
+      "Nature lovers",
+      "Bird watchers",
+      "Culture enthusiasts",
+      "Food lovers",
+      "Photographers",
+      "Families",
+      "Corporate groups",
+    ],
+  };
+
+  // FAQ Schema for Experiences
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What activities and experiences are available at Indigenous Seeds Village?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We offer 8 unique experiences: Nature Walks, Seed Conservation Tours, Bird Watching at Lake Elementaita, Farm Experiences, Cultural Evenings with traditional music and dance, Indigenous Food Cooking Workshops, Wellness & Meditation sessions, and guided Photography Tours. All activities are led by expert guides and suitable for various ages and skill levels.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is bird watching available near the hotel?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! Lake Elementaita is a UNESCO World Heritage Site and Important Bird Area (IBA) home to over 400 bird species including flamingos, pelicans, and eagles. We offer guided bird watching tours with professional ornithologist guides, binoculars, and transport to prime viewing spots. Best viewing times are early morning between 6:00 AM and 10:00 AM.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are the experiences suitable for families with children?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely! Most of our experiences are family-friendly and suitable for all ages. Nature walks, farm experiences, cultural evenings, and cooking workshops are particularly popular with families. Children can learn about indigenous seeds, plant vegetables, and participate in traditional activities. Experiences can be tailored to accommodate different age groups.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <Navbar />
+      {/* ================================
+          COMPREHENSIVE SEO
+          ================================ */}
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          Experiences & Activities | Indigenous Seeds Village — Gilgil,
+          Nakuru County
+        </title>
+        <meta
+          name="description"
+          content="Discover 8 unique experiences at Indigenous Seeds Village near Lake Elementaita, Gilgil. Enjoy guided nature walks, bird watching (400+ species), seed conservation tours, organic farm experiences, cultural evenings, indigenous cooking workshops, wellness meditation, and photography tours in Nakuru County. Family-friendly activities led by expert guides."
+        />
+        <meta
+          name="keywords"
+          content="things to do Gilgil, Lake Elementaita activities, bird watching Nakuru, nature walks Kenya, seed conservation tour, farm experience Kenya, cultural activities Nakuru County, cooking class Kenya, wellness retreat Gilgil, photography tours Lake Elementaita, traditional Kenyan experiences, indigenous food workshop, meditation retreat Kenya, tourist attractions Nakuru, family activities Gilgil, eco-tourism Kenya, UNESCO Lake Elementaita, flamingo watching Kenya, corporate team building Nakuru"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
+        {/* Geographic Tags */}
+        <meta name="geo.region" content="KE-31" />
+        <meta name="geo.placename" content="Gilgil, Nakuru County, Kenya" />
+        <meta name="geo.position" content="-0.5036;36.3188" />
+
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href="https://village.seedfoodculturetourism.org/experiences"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Experiences & Activities | Indigenous Seeds Village — Gilgil, Nakuru County"
+        />
+        <meta
+          property="og:description"
+          content="Discover 8 unique experiences near Lake Elementaita. Nature walks, bird watching, farm tours, cultural evenings, cooking workshops & more."
+        />
+        <meta
+          property="og:url"
+          content="https://village.seedfoodculturetourism.org/experiences"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+        <meta property="og:site_name" content="Indigenous Seeds Village" />
+        <meta property="og:locale" content="en_KE" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Experiences & Activities | Indigenous Seeds Village"
+        />
+        <meta
+          name="twitter:description"
+          content="8 unique experiences near Lake Elementaita. Bird watching, farm tours, cultural evenings & more."
+        />
+        <meta
+          name="twitter:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(experiencesSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+
+      
 
       {/* ================================
           HERO SECTION
@@ -336,8 +468,8 @@ const Experiences = () => {
           <span className="exp-hero-tag">Discover & Explore</span>
           <h1>Experiences & Activities</h1>
           <p>
-            Immerse yourself in the rich tapestry of nature, culture, and 
-            heritage. Every experience is designed to educate, inspire, and 
+            Immerse yourself in the rich tapestry of nature, culture, and
+            heritage. Every experience is designed to educate, inspire, and
             create lasting memories.
           </p>
         </div>
@@ -352,12 +484,12 @@ const Experiences = () => {
             <span className="section-tag">Why Experiences Matter</span>
             <h2>More Than Just a Stay</h2>
             <p>
-              At Indigenous Seeds Village, we believe that the best travel 
-              experiences are those that connect you deeply with a place and 
-              its people. Our carefully curated activities are designed to 
-              immerse you in the natural beauty, cultural richness, and 
-              agricultural heritage of Kenya. Whether you're seeking adventure, 
-              knowledge, relaxation, or all three, there's an experience waiting 
+              At Indigenous Seeds Village, we believe that the best travel
+              experiences are those that connect you deeply with a place and
+              its people. Our carefully curated activities are designed to
+              immerse you in the natural beauty, cultural richness, and
+              agricultural heritage of Kenya. Whether you're seeking adventure,
+              knowledge, relaxation, or all three, there's an experience waiting
               for you.
             </p>
             <div className="exp-summary">
@@ -418,9 +550,9 @@ const Experiences = () => {
               <span className="section-tag">Tailored For You</span>
               <h2>Custom Experiences</h2>
               <p>
-                Looking for something specific? We can create bespoke 
-                experiences tailored to your interests, group size, and 
-                schedule. Perfect for corporate retreats, family reunions, 
+                Looking for something specific? We can create bespoke
+                experiences tailored to your interests, group size, and
+                schedule. Perfect for corporate retreats, family reunions,
                 school groups, and special celebrations.
               </p>
               <Link to="/contact" className="custom-cta">
@@ -439,7 +571,7 @@ const Experiences = () => {
           <div className="exp-cta-content">
             <h2>Ready for an Unforgettable Experience?</h2>
             <p>
-              Book your stay and add experiences to create a truly memorable 
+              Book your stay and add experiences to create a truly memorable
               visit to Indigenous Seeds Village.
             </p>
             <div className="exp-cta-buttons">
@@ -460,7 +592,6 @@ const Experiences = () => {
       {isModalOpen && selectedExperience && (
         <div className="exp-modal-overlay" onClick={closeModal}>
           <div className="exp-modal-container" onClick={(e) => e.stopPropagation()}>
-            {/* Close Button */}
             <button className="exp-modal-close" onClick={closeModal} aria-label="Close modal">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -469,7 +600,6 @@ const Experiences = () => {
             </button>
 
             <div className="exp-modal-body">
-              {/* Image Gallery */}
               <div className="exp-modal-gallery">
                 <div className="exp-modal-image-wrapper">
                   <img
@@ -508,7 +638,6 @@ const Experiences = () => {
                 </div>
               </div>
 
-              {/* Details */}
               <div className="exp-modal-details">
                 <div className="exp-modal-header">
                   <span className="exp-modal-icon">{selectedExperience.icon}</span>
@@ -518,7 +647,6 @@ const Experiences = () => {
 
                 <p className="exp-modal-description">{selectedExperience.longDescription}</p>
 
-                {/* Quick Info */}
                 <div className="exp-modal-info">
                   <div className="exp-info-item">
                     <span className="exp-info-label">Duration</span>
@@ -534,7 +662,6 @@ const Experiences = () => {
                   </div>
                 </div>
 
-                {/* Included */}
                 <div className="exp-modal-section">
                   <h4>What's Included</h4>
                   <ul className="exp-included-list">
@@ -544,7 +671,6 @@ const Experiences = () => {
                   </ul>
                 </div>
 
-                {/* What to Bring */}
                 <div className="exp-modal-section">
                   <h4>What to Bring</h4>
                   <ul className="exp-bring-list">
@@ -554,7 +680,6 @@ const Experiences = () => {
                   </ul>
                 </div>
 
-                {/* CTA */}
                 <div className="exp-modal-footer">
                   <Link
                     to="/booking"
@@ -570,7 +695,7 @@ const Experiences = () => {
         </div>
       )}
 
-      <Footer />
+      
     </>
   );
 };

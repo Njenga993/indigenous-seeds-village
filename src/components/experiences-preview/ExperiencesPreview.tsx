@@ -1,11 +1,11 @@
 import "./ExperiencesPreview.css";
 
-import exp1 from "../../assets/images/SSN_tent.webp";
-import exp2 from "../../assets/images/SSN_seeds.webp";
-import exp3 from "../../assets/images/SSN_room_out.webp";
-import exp4 from "../../assets/images/hero_img.webp";
-import exp5 from "../../assets/images/SSN_garden.webp";
-import exp6 from "../../assets/images/SSN_tables.webp";
+import exp1 from "../../assets/images/naturewalk.jpg";
+import exp2 from "../../assets/images/seeds.webp";
+import exp3 from "../../assets/images/bird.jpg";
+import exp4 from "../../assets/images/holding.webp";
+import exp5 from "../../assets/images/seedschool.webp";
+import exp6 from "../../assets/images/cooking.png";
 
 const experiences = [
   {

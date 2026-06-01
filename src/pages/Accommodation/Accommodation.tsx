@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
+import { Helmet } from "react-helmet-async";
+
 import RoomModal from "../../components/room-modal/RoomModal";
 import "./Accommodation.css";
 
@@ -28,11 +28,6 @@ import amenitySecurity from "../../assets/icons/security.svg";
 interface RoomImage {
   src: string;
   alt: string;
-}
-
-interface RoomAmenity {
-  name: string;
-  icon: string;
 }
 
 interface Room {
@@ -68,9 +63,9 @@ const rooms: Room[] = [
     view: "Garden View",
     totalRooms: 8,
     images: [
-      { src: roomStandard1, alt: "Standard Single Room Interior" },
-      { src: roomStandard2, alt: "Standard Single Room Bathroom" },
-      { src: roomStandard3, alt: "Standard Single Room Garden View" },
+      { src: roomStandard1, alt: "Standard Single Room at Indigenous Seeds Village Gilgil — garden view" },
+      { src: roomStandard2, alt: "Standard Single Room bathroom — eco-friendly hotel Gilgil" },
+      { src: roomStandard3, alt: "Single room accommodation near Lake Elementaita Nakuru County" },
     ],
     amenities: [
       "Comfortable Single Bed",
@@ -106,9 +101,9 @@ const rooms: Room[] = [
     view: "Garden View",
     totalRooms: 5,
     images: [
-      { src: roomDeluxe1, alt: "Standard Double Room Interior" },
-      { src: roomDeluxe2, alt: "Standard Double Room Seating Area" },
-      { src: roomDeluxe3, alt: "Standard Double Room Details" },
+      { src: roomDeluxe1, alt: "Standard Double Room at Indigenous Seeds Village Gilgil" },
+      { src: roomDeluxe2, alt: "Double room seating area — Nakuru County accommodation" },
+      { src: roomDeluxe3, alt: "Double room details — heritage retreat near Lake Elementaita" },
     ],
     amenities: [
       "Comfortable Double Bed",
@@ -146,9 +141,9 @@ const rooms: Room[] = [
     view: "Panoramic Garden View",
     totalRooms: 2,
     images: [
-      { src: roomCottage1, alt: "Family Cottage Exterior" },
-      { src: roomCottage2, alt: "Family Cottage Interior" },
-      { src: roomCottage3, alt: "Family Cottage Veranda" },
+      { src: roomCottage1, alt: "Family Cottage exterior at Indigenous Seeds Village Gilgil" },
+      { src: roomCottage2, alt: "Family Cottage interior — family accommodation Nakuru County" },
+      { src: roomCottage3, alt: "Private veranda — family cottage near Lake Elementaita" },
     ],
     amenities: [
       "1 Double Bed + 1 Single Bed",
@@ -189,9 +184,9 @@ const rooms: Room[] = [
     view: "Lake & Garden Panorama",
     totalRooms: 1,
     images: [
-      { src: roomSuite1, alt: "Executive Suite Bedroom" },
-      { src: roomSuite2, alt: "Executive Suite Living Area" },
-      { src: roomSuite3, alt: "Executive Suite Terrace" },
+      { src: roomSuite1, alt: "Executive Suite bedroom — luxury accommodation Gilgil" },
+      { src: roomSuite2, alt: "Executive Suite living area — best suite Nakuru County" },
+      { src: roomSuite3, alt: "Executive Suite terrace with Lake Elementaita views" },
     ],
     amenities: [
       "King-Size Bed",
@@ -246,9 +241,165 @@ const Accommodation = () => {
     document.body.style.overflow = "";
   };
 
+  // Accommodation Page Schema
+  const accommodationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    name: "Indigenous Seeds Village",
+    description:
+      "Book your stay at Indigenous Seeds Village near Lake Elementaita, Gilgil. Choose from 15 fully self-contained rooms including Standard Singles, Double Rooms, Family Cottages, and Executive Suites with garden views in Nakuru County.",
+    url: "https://village.seedfoodculturetourism.org/accommodation",
+    telephone: "+254712451777",
+    email: "info@seedfoodculturetourism.org",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Near Lake Elementaita, Off Nakuru-Nairobi Highway",
+      addressLocality: "Gilgil",
+      addressRegion: "Nakuru County",
+      addressCountry: "KE",
+      postalCode: "20100",
+    },
+    checkinTime: "12:00",
+    checkoutTime: "10:00",
+    priceRange: "KSh 6,500 - KSh 18,000",
+    numberOfRooms: "15",
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "Free WiFi" },
+      { "@type": "LocationFeatureSpecification", name: "Free Parking" },
+      { "@type": "LocationFeatureSpecification", name: "Farm-to-Table Restaurant" },
+      { "@type": "LocationFeatureSpecification", name: "Garden Views" },
+      { "@type": "LocationFeatureSpecification", name: "En-suite Bathrooms" },
+      { "@type": "LocationFeatureSpecification", name: "Daily Housekeeping" },
+    ],
+    containsPlace: rooms.map((room) => ({
+      "@type": "HotelRoom",
+      name: room.name,
+      description: room.description,
+      occupancy: {
+        "@type": "QuantitativeValue",
+        value: parseInt(room.capacity),
+      },
+      floorSize: {
+        "@type": "QuantitativeValue",
+        value: parseInt(room.size),
+        unitText: "SQM",
+      },
+      price: room.price.replace(/[^0-9]/g, ""),
+      priceCurrency: "KES",
+      numberOfRooms: room.totalRooms,
+    })),
+  };
+
+  // FAQ Schema for Accommodation
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What types of rooms are available at Indigenous Seeds Village?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We offer 4 room types: Standard Single Rooms (KSh 6,500/night, 1 single bed), Standard Double Rooms (KSh 8,500/night, 1 double bed), Family Cottages (KSh 12,000/night, 1 double + 1 single bed), and an Executive Suite (KSh 18,000/night, king-size bed). All 15 rooms are fully self-contained with en-suite bathrooms and garden views.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the check-in and check-out times?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Check-in time is 12:00 PM and check-out time is 10:00 AM. Early check-in is subject to availability, and late check-out can be arranged on request.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you have family-friendly accommodation?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! Our Family Cottages are perfect for families, featuring one double bed and one single bed with a private veranda. Children of all ages are welcome, and children under 5 stay free. We also provide baby cots at no extra charge.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <Navbar />
+      {/* ================================
+          COMPREHENSIVE SEO
+          ================================ */}
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          Accommodation — Rooms & Cottages | Indigenous Seeds Village, Gilgil
+          — Nakuru County
+        </title>
+        <meta
+          name="description"
+          content="Book your stay at Indigenous Seeds Village near Lake Elementaita, Gilgil. Choose from 15 fully self-contained rooms — Standard Single (KSh 6,500), Double Room (KSh 8,500), Family Cottage (KSh 12,000), and Executive Suite (KSh 18,000). All rooms feature garden views, en-suite bathrooms, and authentic Kenyan hospitality in Nakuru County."
+        />
+        <meta
+          name="keywords"
+          content="hotel rooms Gilgil, accommodation Lake Elementaita, Nakuru County lodging, self-contained rooms Gilgil, family cottage Nakuru, executive suite Kenya, eco-friendly accommodation, budget hotel Gilgil, hotel with garden views, book hotel Nakuru, cheap rooms Gilgil, luxury suite Lake Elementaita, standard single room Kenya, double room Gilgil, family accommodation Nakuru, hotel with WiFi Gilgil, best hotel rooms Nakuru County, Indigenous Seeds Village rooms, heritage retreat accommodation"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
+        {/* Geographic Tags */}
+        <meta name="geo.region" content="KE-31" />
+        <meta name="geo.placename" content="Gilgil, Nakuru County, Kenya" />
+        <meta name="geo.position" content="-0.5036;36.3188" />
+
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href="https://village.seedfoodculturetourism.org/accommodation"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Accommodation — Rooms & Cottages | Indigenous Seeds Village, Gilgil"
+        />
+        <meta
+          property="og:description"
+          content="Book your stay at Indigenous Seeds Village near Lake Elementaita. 15 fully self-contained rooms from KSh 6,500/night. Garden views, en-suite bathrooms, and authentic Kenyan hospitality."
+        />
+        <meta
+          property="og:url"
+          content="https://village.seedfoodculturetourism.org/accommodation"
+        />
+        <meta property="og:type" content="hotel" />
+        <meta
+          property="og:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+        <meta property="og:site_name" content="Indigenous Seeds Village" />
+        <meta property="og:locale" content="en_KE" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Accommodation — Rooms & Cottages | Indigenous Seeds Village"
+        />
+        <meta
+          name="twitter:description"
+          content="Book your stay at Indigenous Seeds Village near Lake Elementaita. Rooms from KSh 6,500/night. Garden views included."
+        />
+        <meta
+          name="twitter:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(accommodationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+
+     
 
       {/* ================================
           HERO SECTION
@@ -502,7 +653,7 @@ const Accommodation = () => {
         onClose={closeModal}
       />
 
-      <Footer />
+      
     </>
   );
 };

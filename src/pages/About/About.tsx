@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
+import { Helmet } from "react-helmet-async";
+
 import "./About.css";
 
 import aboutHero from "../../assets/images/hero_img.webp";
@@ -8,14 +8,135 @@ import ourStory from "../../assets/images/SSN_hotel.webp";
 import missionImage from "../../assets/images/SSN_up.webp";
 import heritage1 from "../../assets/images/SSN_seeds.webp";
 import heritage2 from "../../assets/images/SSN_garden.webp";
-import heritage3 from "../../assets/images/SSN_counter.webp";
+import heritage3 from "../../assets/images/cooking.png";
 import sustainabilityImg from "../../assets/images/SSN_bed.webp";
-//import valuesImg from "../../assets/images/values.jpg";
 
 const About = () => {
+  // About Page Schema
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Indigenous Seeds Village",
+    description:
+      "Learn about Indigenous Seeds Village — a heritage retreat by Seed Savers Network Kenya near Lake Elementaita in Gilgil, Nakuru County. Discover our mission, vision, and commitment to indigenous seed conservation and sustainable hospitality.",
+    url: "https://village.seedfoodculturetourism.org/about",
+    about: {
+      "@type": "Hotel",
+      name: "Indigenous Seeds Village",
+      description:
+        "A heritage retreat rooted in indigenous wisdom, biodiversity conservation, and authentic Kenyan hospitality near Lake Elementaita, Gilgil.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Near Lake Elementaita, Off Nakuru-Nairobi Highway",
+        addressLocality: "Gilgil",
+        addressRegion: "Nakuru County",
+        addressCountry: "KE",
+        postalCode: "20100",
+      },
+      parentOrganization: {
+        "@type": "Organization",
+        name: "Seed Savers Network Kenya",
+        url: "https://seedsaverskenya.org",
+      },
+    },
+  };
+
+  // Organization Schema for Seed Savers Network
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Seed Savers Network Kenya",
+    url: "https://seedsaverskenya.org",
+    description:
+      "A pioneering organization dedicated to conserving indigenous seeds, promoting agricultural biodiversity, and empowering farming communities across Kenya.",
+    foundingDate: "2009",
+    location: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Gilgil",
+        addressRegion: "Nakuru County",
+        addressCountry: "KE",
+      },
+    },
+  };
+
   return (
     <>
-      <Navbar />
+      {/* ================================
+          COMPREHENSIVE SEO
+          ================================ */}
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          About Indigenous Seeds Village | Heritage Retreat Near Lake
+          Elementaita, Gilgil — Nakuru County
+        </title>
+        <meta
+          name="description"
+          content="Learn about Indigenous Seeds Village — a heritage retreat by Seed Savers Network Kenya near Lake Elementaita in Gilgil, Nakuru County. Discover our mission to preserve indigenous seeds, promote sustainable tourism, and offer authentic Kenyan hospitality with eco-friendly rooms, farm-to-table cuisine, and cultural experiences."
+        />
+        <meta
+          name="keywords"
+          content="about Indigenous Seeds Village, Seed Savers Network Kenya, heritage retreat Gilgil, eco-lodge Nakuru County, sustainable tourism Kenya, indigenous seed conservation, Kenyan hospitality, Lake Elementaita hotel history, mission and vision hotel Kenya, eco-friendly accommodation Gilgil, cultural heritage retreat, biodiversity conservation Kenya, farm-to-table hotel Kenya, community empowerment tourism, sustainable hospitality Nakuru"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="author" content="Indigenous Seeds Village" />
+
+        {/* Geographic Tags */}
+        <meta name="geo.region" content="KE-31" />
+        <meta name="geo.placename" content="Gilgil, Nakuru County, Kenya" />
+        <meta name="geo.position" content="-0.5036;36.3188" />
+
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href="https://village.seedfoodculturetourism.org/about"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="About Indigenous Seeds Village | Heritage Retreat Near Lake Elementaita, Gilgil"
+        />
+        <meta
+          property="og:description"
+          content="Learn about Indigenous Seeds Village — a heritage retreat by Seed Savers Network Kenya. Discover our mission, vision, and commitment to indigenous seed conservation and sustainable hospitality."
+        />
+        <meta property="og:url" content="https://village.seedfoodculturetourism.org/about" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+        <meta property="og:site_name" content="Indigenous Seeds Village" />
+        <meta property="og:locale" content="en_KE" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="About Indigenous Seeds Village | Heritage Retreat Near Lake Elementaita"
+        />
+        <meta
+          name="twitter:description"
+          content="Learn about Indigenous Seeds Village — a heritage retreat by Seed Savers Network Kenya. Discover our mission and commitment to sustainable hospitality."
+        />
+        <meta
+          name="twitter:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(aboutSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+      </Helmet>
+
+   
 
       {/* ================================
           HERO SECTION
@@ -44,7 +165,7 @@ const About = () => {
         <div className="container">
           <div className="story-grid">
             <div className="story-image">
-              <img src={ourStory} alt="Our Story" />
+              <img src={ourStory} alt="Indigenous Seeds Village story — heritage retreat in Gilgil" />
               <div className="story-image-accent" />
             </div>
             <div className="story-content">
@@ -142,7 +263,7 @@ const About = () => {
         <div className="container">
           <div className="mission-grid">
             <div className="mission-image-wrapper">
-              <img src={missionImage} alt="Our Mission" />
+              <img src={missionImage} alt="Indigenous Seeds Village mission — sustainable hospitality in Nakuru County" />
             </div>
             <div className="mission-content">
               <div className="mission-block">
@@ -332,7 +453,7 @@ const About = () => {
           <div className="heritage-grid">
             <div className="heritage-card">
               <div className="heritage-card-image">
-                <img src={heritage1} alt="Indigenous Seeds" />
+                <img src={heritage1} alt="Living Seed Bank — Indigenous seeds conservation at Indigenous Seeds Village Gilgil" />
               </div>
               <div className="heritage-card-content">
                 <h3>Living Seed Bank</h3>
@@ -348,7 +469,7 @@ const About = () => {
 
             <div className="heritage-card">
               <div className="heritage-card-image">
-                <img src={heritage2} alt="Traditional Architecture" />
+                <img src={heritage2} alt="Traditional Kenyan architecture at Indigenous Seeds Village" />
               </div>
               <div className="heritage-card-content">
                 <h3>Traditional Architecture</h3>
@@ -364,7 +485,7 @@ const About = () => {
 
             <div className="heritage-card">
               <div className="heritage-card-image">
-                <img src={heritage3} alt="Cultural Experiences" />
+                <img src={heritage3} alt="Cultural immersion experiences at Indigenous Seeds Village Nakuru" />
               </div>
               <div className="heritage-card-content">
                 <h3>Cultural Immersion</h3>
@@ -456,7 +577,7 @@ const About = () => {
               </div>
             </div>
             <div className="sustainability-image">
-              <img src={sustainabilityImg} alt="Sustainability" />
+              <img src={sustainabilityImg} alt="Eco-friendly sustainable retreat at Indigenous Seeds Village" />
               <div className="sustainability-badge">
                 <span>Eco-Friendly</span>
                 <span>Retreat</span>
@@ -622,7 +743,7 @@ const About = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 };

@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
+import { Helmet } from "react-helmet-async";
+
+
 import "./Restaurant.css";
 
 import restaurantHero from "../../assets/images/SSN_insert.webp";
 import farmToTable from "../../assets/images/SSN_dinning_table.webp";
-import indoorDining from "../../assets/images/SSN_cottage.webp";
+import indoorDining from "../../assets/images/SSN_dinning_table.webp";
 import outdoorDining from "../../assets/images/SSN_garden.webp";
-import privateDining from "../../assets/images/SSN_dinning_table.webp";
-import dish1 from "../../assets/images/PIC1.jpeg";
-import dish2 from "../../assets/images/PIC2.jpeg";
-import dish3 from "../../assets/images/PIC3.jpeg";
-import dish4 from "../../assets/images/PIC4.jpeg";
-import dish5 from "../../assets/images/PIC5.jpeg";
-import dish6 from "../../assets/images/PIC6.jpeg";
-import experience1 from "../../assets/images/hero_img.webp";
-import experience2 from "../../assets/images/SSN_avocado.webp";
+import privateDining from "../../assets/images/SSN_cottage.webp";
+import dish1 from "../../assets/images/mukimo.jpg";
+import dish2 from "../../assets/images/fish.jpg";
+import dish3 from "../../assets/images/salad.jpg";
+import dish4 from "../../assets/images/githeri.jpg";
+import dish5 from "../../assets/images/porridje.jpg";
+import dish6 from "../../assets/images/fruits.jpg";
+import experience1 from "../../assets/images/solo.jpeg";
+import experience2 from "../../assets/images/cooking.png";
 import experience3 from "../../assets/images/SSN_up.webp";
 
 // Import the menu PDF
@@ -118,9 +119,164 @@ const foodExperiences = [
 ];
 
 const Restaurant = () => {
+  // Restaurant Page Schema
+  const restaurantSchema = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    name: "Indigenous Seeds Village Restaurant",
+    description:
+      "Farm-to-table restaurant serving authentic indigenous Kenyan cuisine near Lake Elementaita, Gilgil. Enjoy organic vegetables from our gardens, traditional recipes, and seasonal menus in Nakuru County.",
+    url: "https://village.seedfoodculturetourism.org/restaurant",
+    telephone: "+254712451777",
+    email: "info@seedfoodculturetourism.org",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Near Lake Elementaita, Off Nakuru-Nairobi Highway",
+      addressLocality: "Gilgil",
+      addressRegion: "Nakuru County",
+      addressCountry: "KE",
+      postalCode: "20166",
+    },
+    servesCuisine: ["Kenyan", "Indigenous", "African", "Organic", "Farm-to-Table"],
+    priceRange: "KSh 500 - KSh 3,000",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "06:00",
+        closes: "21:30",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Saturday"],
+        opens: "06:00",
+        closes: "21:30",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Sunday"],
+        opens: "07:00",
+        closes: "21:30",
+      },
+    ],
+    menu: "https://village.seedfoodculturetourism.org/assets/docs/INDIGENOUS_VILLAGE_Food%20Menu.pdf",
+    acceptsReservations: "Yes",
+    hasMenu: {
+      "@type": "Menu",
+      name: "Indigenous Seeds Village Menu",
+      description: "Full menu featuring indigenous Kenyan cuisine",
+    },
+  };
+
+  // FAQ Schema for Restaurant
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What type of cuisine does the Indigenous Seeds Village restaurant serve?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our restaurant serves authentic indigenous Kenyan cuisine with a farm-to-table philosophy. We use 100% organic ingredients grown in our own gardens or sourced from farmers within the Seed Savers Network. Our menu features traditional dishes like Mukimo, Githeri, grilled Lake Elementaita tilapia with sorghum ugali, and seasonal indigenous vegetables. We also accommodate vegetarian, vegan, gluten-free, and other dietary requirements.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the restaurant operating hours?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Breakfast is served from 6:00 AM to 10:00 AM, Lunch from 12:00 PM to 3:00 PM, and Dinner from 6:00 PM to 9:30 PM. The restaurant is open Monday through Sunday, including holidays.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you offer vegetarian and vegan options?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! We offer a wide range of vegetarian and vegan dishes featuring indigenous vegetables, grains, and legumes. Our kitchen is happy to accommodate various dietary requirements including gluten-free, nut-free, and dairy-free. Please inform us when making your reservation so we can prepare accordingly.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <Navbar />
+      {/* ================================
+          COMPREHENSIVE SEO
+          ================================ */}
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          Restaurant — Indigenous Cuisine | Indigenous Seeds Village, Gilgil
+          — Nakuru County
+        </title>
+        <meta
+          name="description"
+          content="Dine at our farm-to-table restaurant at Indigenous Seeds Village near Lake Elementaita, Gilgil. Enjoy authentic indigenous Kenyan cuisine — Mukimo, grilled tilapia, Githeri, and seasonal organic dishes. View our menu (PDF), book a table, or explore our dining spaces, cooking classes, and culinary experiences in Nakuru County. Vegetarian, vegan & gluten-free options available."
+        />
+        <meta
+          name="keywords"
+          content="restaurant Gilgil, indigenous cuisine Kenya, farm-to-table dining Nakuru, organic restaurant Lake Elementaita, traditional Kenyan food, hotel restaurant Gilgil, best restaurant Nakuru County, Kenyan dishes, vegetarian restaurant Kenya, Mukimo, Githeri, grilled tilapia Kenya, indigenous food workshop, cooking class Gilgil, dining near Lake Elementaita, outdoor dining Kenya, private dining Nakuru, Kenyan breakfast, organic food Kenya, seed-to-plate restaurant"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
+        {/* Geographic Tags */}
+        <meta name="geo.region" content="KE-31" />
+        <meta name="geo.placename" content="Gilgil, Nakuru County, Kenya" />
+        <meta name="geo.position" content="-0.5036;36.3188" />
+
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href="https://village.seedfoodculturetourism.org/restaurant"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Restaurant — Indigenous Cuisine | Indigenous Seeds Village, Gilgil"
+        />
+        <meta
+          property="og:description"
+          content="Farm-to-table indigenous Kenyan cuisine near Lake Elementaita. Organic ingredients, traditional recipes, and seasonal menus. View our menu and book a table."
+        />
+        <meta
+          property="og:url"
+          content="https://village.seedfoodculturetourism.org/restaurant"
+        />
+        <meta property="og:type" content="restaurant" />
+        <meta
+          property="og:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+        <meta property="og:site_name" content="Indigenous Seeds Village" />
+        <meta property="og:locale" content="en_KE" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Restaurant — Indigenous Cuisine | Indigenous Seeds Village"
+        />
+        <meta
+          name="twitter:description"
+          content="Farm-to-table indigenous Kenyan cuisine near Lake Elementaita. Organic ingredients & traditional recipes."
+        />
+        <meta
+          name="twitter:image"
+          content="https://village.seedfoodculturetourism.org/og-image.jpg"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(restaurantSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+
 
       {/* ================================
           HERO SECTION
@@ -148,7 +304,7 @@ const Restaurant = () => {
         <div className="container">
           <div className="philosophy-grid">
             <div className="philosophy-image">
-              <img src={farmToTable} alt="Farm to Table" />
+              <img src={farmToTable} alt="Farm-to-table organic dining at Indigenous Seeds Village restaurant Gilgil Kenya" />
               <div className="philosophy-badge">
                 <span>Seed</span>
                 <span>to</span>
@@ -159,22 +315,22 @@ const Restaurant = () => {
               <span className="section-tag">Our Philosophy</span>
               <h2>Farm-to-Table, Rooted in Heritage</h2>
               <p className="philosophy-lead">
-                At Indigenous Seeds Village, food is more than sustenance — 
-                it is a celebration of Kenya's agricultural biodiversity, 
-                a tribute to the farmers who preserve indigenous seeds, and 
-                an invitation to experience flavours that have nourished 
+                At Indigenous Seeds Village, food is more than sustenance —
+                it is a celebration of Kenya's agricultural biodiversity,
+                a tribute to the farmers who preserve indigenous seeds, and
+                an invitation to experience flavours that have nourished
                 communities for centuries.
               </p>
               <p>
-                Every ingredient we use is either grown in our own indigenous 
-                gardens or sourced from farmers within the Seed Savers Network. 
-                This ensures unparalleled freshness while directly supporting 
-                the conservation of traditional seed varieties and the 
+                Every ingredient we use is either grown in our own indigenous
+                gardens or sourced from farmers within the Seed Savers Network.
+                This ensures unparalleled freshness while directly supporting
+                the conservation of traditional seed varieties and the
                 livelihoods of small-scale farmers.
               </p>
               <p>
-                Our chefs work closely with our farmers and seed conservationists 
-                to create menus that change with the seasons — because the best 
+                Our chefs work closely with our farmers and seed conservationists
+                to create menus that change with the seasons — because the best
                 food is food that respects nature's rhythms.
               </p>
               <div className="philosophy-features">
@@ -209,8 +365,8 @@ const Restaurant = () => {
             <span className="section-tag">Signature Flavours</span>
             <h2>Our Signature Dishes</h2>
             <p>
-              A glimpse into the culinary experiences that await you — each dish 
-              tells a story of tradition, innovation, and the incredible diversity 
+              A glimpse into the culinary experiences that await you — each dish
+              tells a story of tradition, innovation, and the incredible diversity
               of indigenous Kenyan ingredients.
             </p>
           </div>
@@ -218,7 +374,7 @@ const Restaurant = () => {
             {signatureDishes.map((dish, index) => (
               <div key={index} className="dish-card">
                 <div className="dish-image">
-                  <img src={dish.image} alt={dish.name} />
+                  <img src={dish.image} alt={`${dish.name} — ${dish.category} at Indigenous Seeds Village restaurant Gilgil`} />
                   <span className="dish-category">{dish.category}</span>
                 </div>
                 <div className="dish-content">
@@ -241,8 +397,8 @@ const Restaurant = () => {
               <span className="section-tag">Our Menu</span>
               <h2>Explore Our Full Menu</h2>
               <p>
-                From sunrise breakfasts to candlelit dinners, our menu is a 
-                carefully curated journey through Kenya's indigenous food heritage. 
+                From sunrise breakfasts to candlelit dinners, our menu is a
+                carefully curated journey through Kenya's indigenous food heritage.
                 View online or download to plan your culinary experience.
               </p>
               <div className="menu-actions">
@@ -251,6 +407,7 @@ const Restaurant = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="menu-btn-primary"
+                  aria-label="View Indigenous Seeds Village restaurant menu online"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
@@ -262,6 +419,7 @@ const Restaurant = () => {
                   href={menuPDF}
                   download="Indigenous-Seeds-Village-Menu.pdf"
                   className="menu-btn-secondary"
+                  aria-label="Download Indigenous Seeds Village restaurant menu PDF"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -302,8 +460,8 @@ const Restaurant = () => {
             <span className="section-tag">Dining Spaces</span>
             <h2>Choose Your Perfect Setting</h2>
             <p>
-              Whether you prefer elegant indoor dining, breezy outdoor meals, 
-              or intimate private gatherings, we have the perfect space for 
+              Whether you prefer elegant indoor dining, breezy outdoor meals,
+              or intimate private gatherings, we have the perfect space for
               every occasion.
             </p>
           </div>
@@ -311,7 +469,7 @@ const Restaurant = () => {
             {diningSpaces.map((space, index) => (
               <div key={index} className="space-card">
                 <div className="space-image">
-                  <img src={space.image} alt={space.name} />
+                  <img src={space.image} alt={`${space.name} at Indigenous Seeds Village — ${space.bestFor} near Lake Elementaita`} />
                 </div>
                 <div className="space-content">
                   <h3>{space.name}</h3>
@@ -349,7 +507,7 @@ const Restaurant = () => {
             <span className="section-tag">Beyond Dining</span>
             <h2>Culinary Experiences</h2>
             <p>
-              Dive deeper into Kenya's food culture with our immersive culinary 
+              Dive deeper into Kenya's food culture with our immersive culinary
               experiences — designed to educate, inspire, and delight.
             </p>
           </div>
@@ -357,7 +515,7 @@ const Restaurant = () => {
             {foodExperiences.map((experience, index) => (
               <div key={index} className="food-experience-card">
                 <div className="food-experience-image">
-                  <img src={experience.image} alt={experience.title} />
+                  <img src={experience.image} alt={`${experience.title} — culinary experience at Indigenous Seeds Village Gilgil Kenya`} />
                   <span className="experience-duration">{experience.duration}</span>
                 </div>
                 <div className="food-experience-content">
@@ -379,33 +537,33 @@ const Restaurant = () => {
             <span className="section-tag">Everyone Is Welcome</span>
             <h2>Dietary Requirements</h2>
             <p>
-              We believe that great food should be accessible to everyone. Our 
-              kitchen is happy to accommodate a wide range of dietary needs and 
+              We believe that great food should be accessible to everyone. Our
+              kitchen is happy to accommodate a wide range of dietary needs and
               preferences. Please inform us when making your reservation.
             </p>
             <div className="diets-grid">
               <div className="diet-item">
-                <span className="diet-icon">🥬</span>
+                <span className="diet-icon"></span>
                 <span>Vegetarian</span>
               </div>
               <div className="diet-item">
-                <span className="diet-icon">🌱</span>
+                <span className="diet-icon"></span>
                 <span>Vegan</span>
               </div>
               <div className="diet-item">
-                <span className="diet-icon">🌾</span>
+                <span className="diet-icon"></span>
                 <span>Gluten-Free</span>
               </div>
               <div className="diet-item">
-                <span className="diet-icon">🥜</span>
+                <span className="diet-icon"></span>
                 <span>Nut-Free</span>
               </div>
               <div className="diet-item">
-                <span className="diet-icon">🥛</span>
+                <span className="diet-icon"></span>
                 <span>Dairy-Free</span>
               </div>
               <div className="diet-item">
-                <span className="diet-icon">👶</span>
+                <span className="diet-icon"></span>
                 <span>Children's Menu</span>
               </div>
             </div>
@@ -423,9 +581,9 @@ const Restaurant = () => {
               <span className="section-tag">Special Occasions</span>
               <h2>Private Dining & Events</h2>
               <p>
-                Celebrate birthdays, anniversaries, corporate dinners, or any 
-                special occasion with a bespoke dining experience. Our team will 
-                work with you to create a menu and setting that makes your event 
+                Celebrate birthdays, anniversaries, corporate dinners, or any
+                special occasion with a bespoke dining experience. Our team will
+                work with you to create a menu and setting that makes your event
                 unforgettable.
               </p>
               <Link to="/contact" className="events-cta">
@@ -444,7 +602,7 @@ const Restaurant = () => {
           <div className="restaurant-cta-content">
             <h2>Ready to Taste Indigenous Kenya?</h2>
             <p>
-              Join us for an unforgettable culinary journey that celebrates the 
+              Join us for an unforgettable culinary journey that celebrates the
               flavours, traditions, and biodiversity of Kenya's food heritage.
             </p>
             <div className="restaurant-cta-buttons">
@@ -459,7 +617,7 @@ const Restaurant = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 };

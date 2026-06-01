@@ -44,8 +44,8 @@ const AboutPreview = () => {
             food systems.
           </p>
 
-          <button className="about-preview-btn">
-            Learn More
+          <button className="about-preview-btn" onClick={() => window.location.href = "/about"}>
+            Learn More 
           </button>
 
           <div className="about-stats">

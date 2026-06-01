@@ -46,7 +46,7 @@ const Navbar = () => {
           </nav>
 
           {/* CTA */}
-          <button className="book-btn">
+          <button className="book-btn" onClick={() => window.location.href = "/booking"}>
             Book Now
           </button>
 
@@ -137,7 +137,7 @@ const Navbar = () => {
           Contact
         </Link>
 
-        <button className="mobile-book-btn">
+        <button className="mobile-book-btn" onClick={() => window.location.href = "/booking"}>
           Book Now
         </button>
       </div>

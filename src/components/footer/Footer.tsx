@@ -97,7 +97,7 @@ const Footer = () => {
             <h4>Get in Touch</h4>
             <ul className="contact-list">
               <li>
-                <span className="contact-icon">📍</span>
+                <span className="contact-icon"></span>
                 <span>
                   Indigenous Seeds Village<br />
                   Near Lake Elementaita<br />
@@ -105,12 +105,12 @@ const Footer = () => {
                 </span>
               </li>
               <li>
-                <span className="contact-icon">📞</span>
-                <span>+254 700 000 000</span>
+                <span className="contact-icon"></span>
+                <span>+254 712 451 777</span>
               </li>
               <li>
-                <span className="contact-icon">✉️</span>
-                <span>info@indigenousseedsvillage.co.ke</span>
+                <span className="contact-icon"></span>
+                <span>info@seedfoodculturetourism.org</span>
               </li>
             </ul>
           </div>
@@ -136,6 +136,18 @@ const Footer = () => {
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>
           </div>
+        </div>
+
+        {/* ===== DEVELOPER CREDIT ===== */}
+        <div className="footer-credit">
+          <span>Developed by </span>
+          <a
+            href="https://njenga993.github.io/kspace/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            K-Space
+          </a>
         </div>
       </div>
     </footer>

@@ -40,25 +40,25 @@ const ConferencePreview = () => {
             <div className="facility-grid">
 
               <div className="facility-card">
-                <div className="facility-icon">🏛️</div>
+                <div className="facility-icon"></div>
                 <h4>3 Conference Rooms</h4>
                 <p>Flexible layouts for any gathering</p>
               </div>
 
               <div className="facility-card">
-                <div className="facility-icon">🌿</div>
+                <div className="facility-icon"></div>
                 <h4>Natural Lighting</h4>
                 <p>Bright spaces with scenic views</p>
               </div>
 
               <div className="facility-card">
-                <div className="facility-icon">🤝</div>
+                <div className="facility-icon"></div>
                 <h4>Team Building</h4>
                 <p>Outdoor activities and bonding</p>
               </div>
 
               <div className="facility-card">
-                <div className="facility-icon">🍽️</div>
+                <div className="facility-icon"></div>
                 <h4>Catering Services</h4>
                 <p>Indigenous cuisine for your guests</p>
               </div>
