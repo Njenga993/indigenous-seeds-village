@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://village.seedfoodculturetourism.org/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://village.seedfoodculturetourism.org/" />
+    <xhtml:link rel="alternate" hreflang="en-KE" href="https://village.seedfoodculturetourism.org/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://village.seedfoodculturetourism.org/" />
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://village.seedfoodculturetourism.org/about</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Accommodation -->
+  <url>
+    <loc>https://village.seedfoodculturetourism.org/accommodation</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://village.seedfoodculturetourism.org/og-image.jpg</image:loc>
+      <image:title>Indigenous Seeds Village Accommodation</image:title>
+    </image:image>
+  </url>
+
+  <!-- Restaurant -->
+  <url>
+    <loc>https://village.seedfoodculturetourism.org/restaurant</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Experiences -->
+  <url>
+    <loc>https://village.seedfoodculturetourism.org/experiences</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Conference -->
+  <url>
+    <loc>https://village.seedfoodculturetourism.org/conference</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://village.seedfoodculturetourism.org/gallery</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://village.seedfoodculturetourism.org/og-image.jpg</image:loc>
+      <image:title>Indigenous Seeds Village Photo Gallery</image:title>
+    </image:image>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://village.seedfoodculturetourism.org/contact</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Booking -->
+  <url>
+    <loc>https://village.seedfoodculturetourism.org/booking</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

@@ -10,6 +10,7 @@ import Gallery from "../pages/Gallery/Gallery";
 //import Events from "../pages/Events/Events";
 import Contact from "../pages/Contact/Contact";
 import Booking from "../pages/Booking/Booking";
+import NotFound from "../pages/NotFound/NotFound";
 
 const AppRoutes = () => {
   return (
@@ -24,6 +25,7 @@ const AppRoutes = () => {
       {/* <Route path="/events" element={<Events />} /> */}
       <Route path="/contact" element={<Contact />} />
       <Route path="/booking" element={<Booking />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
